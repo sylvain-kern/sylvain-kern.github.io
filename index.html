@@ -8,22 +8,24 @@
   <title>Instrumentation de structures dans le génie civil</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href=".\style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
-   var mathElements = document.getElementsByClassName("math");
-   var macros = [];
-   for (var i = 0; i < mathElements.length; i++) {
-    var texText = mathElements[i].firstChild;
-    if (mathElements[i].tagName == "SPAN") {
-     katex.render(texText.data, mathElements[i], {
-      displayMode: mathElements[i].classList.contains('display'),
-      throwOnError: false,
-      macros: macros,
-      fleqn: false
-     });
-  }}});
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
   </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -37,410 +39,749 @@
 </header>
 <nav id="TOC">
 <ul>
-<li><a href="#sec:introduction">Introduction</a></li>
-<li><a href="#sec:sixense">Sixense Monitoring</a>
+<li><a href="#sec:introduction"
+id="toc-sec:introduction">Introduction</a></li>
+<li><a href="#sec:sixense" id="toc-sec:sixense">Sixense Monitoring</a>
 <ul>
-<li><a href="#la-société">La société</a></li>
-<li><a href="#activité.">Activité.</a></li>
-<li><a href="#les-services">Les services</a></li>
-<li><a href="#organisation-du-travail.">Organisation du travail.</a></li>
+<li><a href="#la-société" id="toc-la-société">La société</a></li>
+<li><a href="#activité" id="toc-activité">Activité</a></li>
+<li><a href="#les-services" id="toc-les-services">Les services</a></li>
+<li><a href="#organisation-du-travail"
+id="toc-organisation-du-travail">Organisation du travail</a></li>
 </ul></li>
-<li><a href="#sec:canakkale">Le projet Çanakkale</a>
+<li><a href="#sec:canakkale" id="toc-sec:canakkale">Le projet
+Çanakkale</a>
 <ul>
-<li><a href="#réseau-de-capteurs.">Réseau de capteurs.</a></li>
-<li><a href="#jauges-de-contrainte.">Jauges de contrainte.</a></li>
-<li><a href="#accéléromètres.">Accéléromètres.</a></li>
-<li><a href="#inclinomètres.">Inclinomètres.</a></li>
-<li><a href="#capteurs-de-température.">Capteurs de température.</a></li>
-<li><a href="#capteurs-à-fibre-optique.">Capteurs à fibre optique.</a></li>
-<li><a href="#mise-en-base-de-données.">Mise en base de données.</a></li>
-<li><a href="#traitement-de-données.">Traitement de données.</a></li>
-<li><a href="#section">.</a></li>
+<li><a href="#réseau-de-capteurs" id="toc-réseau-de-capteurs">Réseau de
+capteurs</a></li>
+<li><a href="#jauges-de-contrainte" id="toc-jauges-de-contrainte">Jauges
+de contrainte</a></li>
+<li><a href="#accéléromètres"
+id="toc-accéléromètres">Accéléromètres</a></li>
+<li><a href="#inclinomètres"
+id="toc-inclinomètres">Inclinomètres</a></li>
+<li><a href="#capteurs-de-température"
+id="toc-capteurs-de-température">Capteurs de température</a></li>
+<li><a href="#capteurs-à-fibre-optique"
+id="toc-capteurs-à-fibre-optique">Capteurs à fibre optique</a></li>
+<li><a href="#mise-en-base-de-données"
+id="toc-mise-en-base-de-données">Mise en base de données</a></li>
+<li><a href="#traitement-de-données"
+id="toc-traitement-de-données">Traitement de données</a></li>
+<li><a href="#section" id="toc-section"></a></li>
 </ul></li>
-<li><a href="#sec:iot">Développement d’une plateforme de suivi de fréquence propre</a>
+<li><a href="#sec:iot" id="toc-sec:iot">Développement d’une plateforme
+de suivi de fréquence propre</a>
 <ul>
-<li><a href="#hardware.">Hardware.</a></li>
-<li><a href="#software.">Software.</a></li>
-<li><a href="#envoi-des-données.">Envoi des données.</a></li>
+<li><a href="#hardware" id="toc-hardware">Hardware</a></li>
+<li><a href="#software" id="toc-software">Software</a></li>
+<li><a href="#envoi-des-données" id="toc-envoi-des-données">Envoi des
+données</a></li>
 </ul></li>
-<li><a href="#sec:conclusion">Conclusions</a></li>
+<li><a href="#sec:slotstress" id="toc-sec:slotstress">Alimentation de
+SlotStress en </a>
+<ul>
+<li><a href="#précontrainte-du-béton"
+id="toc-précontrainte-du-béton">Précontrainte du béton</a></li>
+</ul></li>
+<li><a href="#sec:conclusion"
+id="toc-sec:conclusion">Conclusions</a></li>
 </ul>
 </nav>
-<p> </p>
-<p>Remerciements.</p>
+<p>  <span> Remerciements. </span></p>
 <p> </p>
 <section id="sec:introduction" class="level2">
 <h2>Introduction</h2>
-<p>J’ai réalisé mon Travail de Fin d’Études, qui clôt ma dernière année à Centrale Lille, dans la société Sixense Monitoring, spécialisé en auscultation et dans le et le génie civil. Ce stage d’une durée de six mois, du 4 avril au 30 septembre 2022, a constitué pour moi une expérience conséquente d’immersion en entreprise, et l’occasion de mettre en pratique et confronter les acquis de la formation centralienne.<span class="sidenote-wrapper"><label for="sn-0" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-0" class="margin-toggle"/><span class="sidenote">Ceci est une <em>footnote</em>.<br />
-<br />
-</span></span></p>
-<p>Un certain nombre d’acronymes et de termes propres au secteur sont utilisés dans ce rapport. Ils sont explicités autant que possible au cours du document, et répertoriés dans un .</p>
+<p>Le Travail de Fin d’Études, objet de ce rapport, clôt ma dernière
+année à Centrale Lille. Il a consisté en un stage de vingt-six semaines
+–soit six mois– que j’ai réalisé dans la société Sixense Monitoring,
+spécialisé en auscultation et dans le et le génie civil. Cette période a
+duré du 4 avril au 30 septembre 2022, et a constitué une expérience
+conséquente d’immersion en entreprise, pendant laquelle m’a été donné
+plusieurs types de missions : de l’instrumentation de structures, du
+<span data-acronym-label="commissioning"
+data-acronym-form="singular+short">commissioning</span>, des tests et
+projets de <span data-acronym-label="retd"
+data-acronym-form="singular+short">retd</span>, qui m’ont permis de
+travailler dans l’instrumentation, sur des projets concrets et
+applicatifs.</p>
+<p>Ces missions ont été l’occasion pour moi de découvrir un secteur
+d’activité et ses caractéristiques propres, et surtout, d’appréhender
+les aspects de l’instrumentation du “côté privé,” en complément de la
+dominante recherche apportée par le parcours de G3 à Centrale. J’en ai
+par conséquent tiré un enseignement et une expérience significatifs,
+dont je vais rendre compte dans le présent rapport.</p>
+<p>Je commence par présenter Sixense Monitoring : sa structure et
+position dans le groupe Vinci, ses chiffres clés, son positionnement
+dans le marché de l’auscultation, et mon intégration dans l’équipe .
+Puis, je décris dans des parties dédiées mes différentes missions, tant
+dans leurs aspects techniques qu’organisationnels, et les enseignements
+qu’elles m’ont apporté.</p>
+<p>Un certain nombre d’acronymes et de termes propres au secteur sont
+utilisés dans ce rapport. Ils sont explicités autant que possible au
+cours du document, et répertoriés dans un <a
+href="#sec:glossaire">glossaire en section <a href="#sec:glossaire"
+data-reference-type="ref"
+data-reference="sec:glossaire">[sec:glossaire]</a>, p.</a>.</p>
 </section>
 <section id="sec:sixense" class="level2">
 <h2>Sixense Monitoring</h2>
 <p>Sixense Monitoring</p>
-<p><img src="pic/Logo_Vinci_Construction.png" alt="image" /> <img src="pic/soletanche-freyssinet-logo.png" alt="image" /> <img src="pic/sixense-logo.png" alt="image" /></p>
-<p>est une au capital de 3801488 € spécialisée dans l’auscultation et le dans le le génie civil. Filiale de Solétanche Freyssinet celle-ci filiale du groupe Vinci Construction, elle est implantée dans plus de vingt pays autour du monde et compte cinq agences en France. Le siège social est situé à Nanterre, dans les Hauts-de-Seine.</p>
-<p>—&gt; organigramme de sixense monitoring dans vinci</p>
+<p><img src="pic/Logo_Vinci_Construction.png" alt="image" /> <img
+src="pic/soletanche-freyssinet-logo.png" alt="image" /> <img
+src="pic/sixense-logo.png" alt="image" /></p>
+<p>est une au capital de 3801488 € spécialisée dans l’auscultation et le
+dans le le génie civil. Faisant partie du groupe Sixense, filiale de
+Solétanche Freyssinet celle-ci filiale du groupe Vinci Construction,
+elle est implantée dans plus de vingt pays autour du monde et compte
+cinq agences en France. Le siège social est situé à Nanterre, dans les
+Hauts-de-Seine.</p>
+<p>—&gt; organigramme de sixense monitoring dans Vinci</p>
+<p>La société est composée de plusieurs branches qui à leur tour voient
+fleurir de petits bourgeons.</p>
 <section id="la-société" class="level3">
 <h3>La société</h3>
-<p>fait partie du groupe Sixense, composé des sous-entités suivantes.</p>
+<p>Sixense Monitoring fait partie du groupe Sixense, qui regroupe les
+métiers de l’auscultation et de l’instrumentation. Sixense comprend cinq
+sociétés : (en vrai bien capter et expliquer les délires)</p>
 <ul>
-<li><p><em>Sixense Engineering</em></p></li>
-<li><p><em>Sixense Mapping</em></p></li>
-<li><p><em>Sixense Platform Solutions</em>, qui développe les solutions logicielles utilisées par l’ensemble des équipes chez Sixense. Par exemple, les données acquises par les sont traitées sur la plate-forme Geoscope, dévelopée par <em>Platform Solutions</em>.</p></li>
-<li><p><em>Sixense Necs</em>, une équipe spécialisée dans les calculs complexes dans des cas de figure qui sortent du champ de compétence d’<em>Engineering</em>.</p></li>
-<li><p><em>Sixense Monitoring</em>, société dans laquelle j’ai effectué mon stage, présentée en détail plus bas dans cette partie.</p></li>
+<li><p><em>Sixense Engineering</em>,</p></li>
+<li><p><em>Sixense Mapping</em>,</p></li>
+<li><p><em>Sixense Platform Solutions</em>, qui développe les solutions
+logicielles utilisées par l’ensemble des équipes chez Sixense. Par
+exemple, les données acquises par les sont traitées sur la plate-forme
+Geoscope,<span class="citation" data-cites="geoscope"><a href="#fn1"
+class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></span> dévelopée par <em>Platform
+Solutions</em>.</p></li>
+<li><p><em>Sixense Necs</em>,</p></li>
+<li><p><em>Sixense Monitoring</em>,</p></li>
 </ul>
 </section>
-<section id="activité." class="level3">
-<h3>Activité.</h3>
-<p>Sixense Monitoring résulte de la fusion de deux anciennes sociétés : Sixense Soldata et Sixense Systems, spécialisés respectivement dans les activitées suivantes.</p>
+<section id="activité" class="level3">
+<h3>Activité</h3>
+<p>Sixense Monitoring résulte de la fusion de deux anciennes sociétés :
+Sixense Soldata et Sixense Systems, spécialisés respectivement dans les
+activitées suivantes.</p>
 <ul>
-<li><p><em>Ex Soldata.</em> L’entreprise est leader historique dans l’auscultation de chantiers dans le , c’est-à-dire mesurer les déplacements de bâtiments, tassements du terrain au passage de tunneliers, de vibrations, etc. Ce sont des projets court terme, qui se terminent après réalisation du chantier.</p>
-<p>-&gt; tiltmètres</p>
-<p>-&gt; inclinomètres</p>
-<p>-&gt; pendules</p>
-<p>-&gt; tassomètres</p>
-<p>-&gt; convergencemètres</p>
-<p>-&gt; sans contact : satellite, <span data-acronym-label="to" data-acronym-form="singular+short">to</span> cyclops, centaure.</p>
-<p>–&gt; systèmes théodolites + boitiers nomad "standard", applicables directement par les techniciens pour une multitude de chantiers différents.</p></li>
-<li><p><em>Ex Systems.</em> Réalisation du sur des structures existantes dans le génie civil sur un marché international. Il s’agit d’instrumenter un ouvrage avec des capteurs (jauges de contrainte, accéléromètres, inclinomètres, etc.) afin de suivre son état sur le long terme. Par exemple, le viaduc 1915 Çanakkale sur le détroit des Dardanelles en Turquie, le Pont Yavuz Sultan Selim sur le Bosphore, le pont Rama III à Bangkok en Thaïlande sont instrumentés par Sixense Monitoring.</p>
-<p>-&gt; projet long terme</p>
-<p>-&gt; dimensionnement du système unique pour chaque chantier</p></li>
+<li><p><em>Ex Soldata.</em> L’entreprise est leader historique dans
+l’auscultation de chantiers dans le , c’est-à-dire mesurer les
+déplacements de bâtiments, tassements du terrain au passage de
+tunneliers, de vibrations, etc. Ce sont des projets court terme, qui se
+terminent après réalisation du chantier.</p></li>
+<li><p><em>Ex Systems.</em> Réalisation du sur des structures existantes
+dans le génie civil sur un marché international. Il s’agit
+d’instrumenter un ouvrage avec des capteurs (jauges de contrainte,
+accéléromètres, inclinomètres, etc.) afin de suivre son état sur le long
+terme. Par exemple, le viaduc 1915 Çanakkale sur le détroit des
+Dardanelles en Turquie, le Pont Yavuz Sultan Selim sur le Bosphore, le
+pont Rama III à Bangkok en Thaïlande sont instrumentés par Sixense
+Monitoring.</p></li>
 </ul>
 </section>
 <section id="les-services" class="level3">
 <h3>Les services</h3>
-<p>direction</p>
-<p>service commercial</p>
-<p>service shm</p>
-<p>opérationnel : les différents lots chantiers</p>
-<p>rh</p>
-<p>agences régions :</p>
-<p>service -&gt; animation de formations internes (par exemple le délire du train sous coupure et tout, les différents types de chantier ont des règles spécifiques : chantiers de forages, soutènements, équipements sous pression, machines, voies ferroviaires, routières, etc.) -&gt; remontées Vinci Watch : remontées sur des situations dangereuses ou bonne pratiques à adopter.</p>
 </section>
-<section id="organisation-du-travail." class="level3">
-<h3>Organisation du travail.</h3>
-<p>teams</p>
-<p>planning</p>
+<section id="organisation-du-travail" class="level3">
+<h3>Organisation du travail</h3>
 </section>
 </section>
 <section id="sec:canakkale" class="level2">
 <h2>Le projet Çanakkale</h2>
-<p>EverSense</p>
-<p>ScanPrint</p>
-<p>Çanakkale est le projet du pont 1915 Çanakkale Koprüsü en Turquie. C’est un viaduc suspendu de <span data-acronym-label="mainspan" data-acronym-form="singular+short">mainspan</span> (distance entre les pylônes) 2023 m,<span class="sidenote-wrapper"><label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/><span class="sidenote">Cette distance, qui n’est pas laissée au hasard, correspond d’une part à la date de mise en service du pont en 2023, d’autre part à celle du centenaire de la fondation de la république turque par Atatürk.<br />
+<p>Çanakkale est le projet du pont 1915 Çanakkale Koprüsü en Turquie.
+C’est un viaduc suspendu de <span data-acronym-label="mainspan"
+data-acronym-form="singular+short">mainspan</span> 2023 m,<span
+class="sidenote-wrapper"><label for="sn-0" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-0" class="margin-toggle"/><span
+class="sidenote">Cette distance, qui n’est pas laissée au hasard,
+correspond d’une part à la date de mise en service du pont en 2023,
+d’autre part à celle du centenaire de la fondation de la république
+turque par Atatürk.<br />
 <br />
-</span></span> pour une longueur totale de 4608 m, ce qui en fait actuellement le pont suspendu le plus long du monde.</p>
-<section id="réseau-de-capteurs." class="level3">
-<h3>Réseau de capteurs.</h3>
-<p>—&gt; diagramme schématique du réseau, des serveurs jusqu’aux voies d’acquisition.</p>
-<p>Les spécifications du système ont été effectuées par la société COWI, un cabinet de conseil danois. Ce document liste l’ensemble des caractéristiques que doit présenter ce système du viaduc de Çanakkale. Entre autres, une liste exhaustive des capteurs.</p>
+</span></span> pour une longueur totale de 4608 m, ce qui en fait
+actuellement le pont suspendu le plus long du monde. C’est un des plus
+gros projets dans lesquels est investie Sixense. La majeure partie de
+mon temps de stage s’est passée en travaillant sur ce projet. Avant
+d’expliciter mes missions au sein de ce projet, je vais présenter le
+projet.</p>
+<p>Comme tous les projets , il s’agit d’instrumenter une structure –ici
+le viaduc de Çanakkale– afin d’en extraire de la donnée, celle-ci
+utilisée pour déterminer l’état structurel sur le long terme. Ici,
+Sixense suivra l’état du pont dès la fin de sa construction :
+l’inauguration a eu lieu en mars 2022 et le <span
+data-acronym-label="commissioning"
+data-acronym-form="singular+short">commissioning</span> du système s’est
+déroulé sur l’été 2022. Plus de 1000 capteurs sont installés et
+réalisent des acquisitions en continu sur la structure, et alimentent
+une base de données. Ces données sont ensuite traitées et suivies pour
+déterminer les comportements normaux et anormaux, et produire des
+alertes.</p>
+<section id="réseau-de-capteurs" class="level3">
+<h3>Réseau de capteurs</h3>
+<p>Les spécifications du système ont été effectuées par la société COWI,
+un cabinet de conseil danois. Ce document liste l’ensemble des
+caractéristiques que doit présenter le système .</p>
+<div id="tab:sensorlist">
 <table>
+<caption>Liste des capteurs.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span
+class="smallcaps"><em>tag</em></span></th>
+<th style="text-align: left;"><span class="smallcaps">type de
+capteur</span></th>
+<th style="text-align: right;"><span
+class="math inline">f_\text{acq}</span> (Hz)</th>
+<th style="text-align: right;"><span
+class="smallcaps">quantité</span></th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><span class="smallcaps"><em>tag</em></span></td>
-<td style="text-align: left;"><span class="smallcaps">type de capteur</span></td>
-<td style="text-align: right;"><span class="math inline">f_\text{acq}</span> (Hz)</td>
-<td style="text-align: right;"><span class="smallcaps">quantité</span></td>
-</tr>
-<tr class="even">
 <td style="text-align: left;"><code>ACC1</code></td>
 <td style="text-align: left;">accéléromètre uniaxial</td>
 <td style="text-align: right;">100</td>
 <td style="text-align: right;">18</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><code>ACC2</code></td>
 <td style="text-align: left;">accéléromètre biaxial</td>
 <td style="text-align: right;">100</td>
 <td style="text-align: right;">28</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><code>ACC3</code></td>
 <td style="text-align: left;">accéléromètre triaxial</td>
 <td style="text-align: right;">100</td>
 <td style="text-align: right;">57</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><code>AS-TEMP</code></td>
 <td style="text-align: left;">température de l’asphalte</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">8</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><code>S-TEMP</code></td>
 <td style="text-align: left;">température de l’acier</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">52</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><code>AIR-TEMP</code></td>
 <td style="text-align: left;">température de l’air</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">4</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><code>CAB-TEMP</code></td>
 <td style="text-align: left;">température des câbles</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">4</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><code>CL</code></td>
 <td style="text-align: left;">capteur de présence</td>
 <td style="text-align: right;">10</td>
 <td style="text-align: right;">2</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><code>BAR</code></td>
 <td style="text-align: left;">baromètre</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">4</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><code>HUM</code></td>
 <td style="text-align: left;">capteur d’humidité</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">4</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><code>CORR</code></td>
 <td style="text-align: left;">capteur de corrosion</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">36</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><code>DISP</code></td>
 <td style="text-align: left;">capteur de déplacement</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: right;">64</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><code>GPS</code></td>
 <td style="text-align: left;">récepteur</td>
 <td style="text-align: right;">10</td>
-<td style="text-align: right;">28<span class="sidenote-wrapper"><label for="sn-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-2" class="margin-toggle"/><span class="sidenote">   Dont 2 de de référence.<br />
-<br />
-</span></span></td>
+<td style="text-align: right;">28</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><code>INC</code></td>
 <td style="text-align: left;">inclinomètre biaxial</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: right;">74</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><code>D-SG</code></td>
 <td style="text-align: left;">jauge de contrainte dynamique</td>
-<td style="text-align: right;">1000<span class="sidenote-wrapper"><label for="sn-3" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-3" class="margin-toggle"/><span class="sidenote">   Sous-échantillonné à 100 Hz.<br />
-<br />
-</span></span></td>
+<td style="text-align: right;">1000</td>
 <td style="text-align: right;">508</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><code>S-SG</code></td>
 <td style="text-align: left;">jauge de contrainte statique</td>
 <td style="text-align: right;">20</td>
 <td style="text-align: right;">88</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><code>LOC</code></td>
 <td style="text-align: left;">cellule de chargement</td>
 <td style="text-align: right;"></td>
 <td style="text-align: right;">16</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><code>WS</code></td>
 <td style="text-align: left;">station météo</td>
 <td style="text-align: right;">10</td>
 <td style="text-align: right;">6</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><code>PY</code></td>
 <td style="text-align: left;">pyranomètre</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">2</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><code>SS</code></td>
 <td style="text-align: left;">station sismique</td>
 <td style="text-align: right;"></td>
 <td style="text-align: right;">2</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><code>DAMPER</code></td>
 <td style="text-align: left;">amortisseur</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">4</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><code>BUFFER</code></td>
 <td style="text-align: left;"></td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><code>WIMS</code></td>
 <td style="text-align: left;"></td>
 <td style="text-align: right;">1000</td>
 <td style="text-align: right;">2</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><code>RWMS</code></td>
 <td style="text-align: left;"></td>
 <td style="text-align: right;"></td>
 <td style="text-align: right;">4</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><span class="smallcaps">total</span></td>
 <td style="text-align: left;"></td>
 <td style="text-align: right;"></td>
 <td style="text-align: right;">1015</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
-</tr>
 </tbody>
 </table>
+</div>
+<div id="tab:systemlist">
 <table>
+<caption>Liste des systèmes.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span
+class="smallcaps"><em>tag</em></span></th>
+<th style="text-align: left;"><span class="smallcaps">type de
+système</span></th>
+<th style="text-align: right;"><span
+class="smallcaps">quantité</span></th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><span class="smallcaps"><em>tag</em></span></td>
-<td style="text-align: left;"><span class="smallcaps">type de système</span></td>
-<td style="text-align: right;"><span class="smallcaps">quantité</span></td>
-</tr>
-<tr class="even">
 <td style="text-align: left;"><code>DAU</code></td>
 <td style="text-align: left;"></td>
 <td style="text-align: right;">34</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><code>JB</code></td>
 <td style="text-align: left;"></td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><code>MFS</code></td>
 <td style="text-align: left;"></td>
 <td style="text-align: right;">1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><code>MBSS</code></td>
 <td style="text-align: left;"></td>
 <td style="text-align: right;">1</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: right;"></td>
-</tr>
 </tbody>
 </table>
+</div>
 </section>
-<section id="jauges-de-contrainte." class="level3">
-<h3>Jauges de contrainte.</h3>
+<section id="jauges-de-contrainte" class="level3">
+<h3>Jauges de contrainte</h3>
 </section>
-<section id="accéléromètres." class="level3">
-<h3>Accéléromètres.</h3>
+<section id="accéléromètres" class="level3">
+<h3>Accéléromètres</h3>
 </section>
-<section id="inclinomètres." class="level3">
-<h3>Inclinomètres.</h3>
+<section id="inclinomètres" class="level3">
+<h3>Inclinomètres</h3>
 </section>
-<section id="capteurs-de-température." class="level3">
-<h3>Capteurs de température.</h3>
+<section id="capteurs-de-température" class="level3">
+<h3>Capteurs de température</h3>
 </section>
-<section id="capteurs-à-fibre-optique." class="level3">
-<h3>Capteurs à fibre optique.</h3>
-<p>Les capteurs à fibre optique dits <em>distribués</em> sont une manière de relever l’état de contrainte, la déformation, ou la température dans les structures, et ce de manière continue : ils donnent une image spatialement résolue de la grandeur que l’on veut mesurer. Typiquement, cette résolution peut aller de quelques mètres jusqu’à descendre en-dessous du mm. Cette technologie est donc intéressante pour des applications : un unique capteur offre une image de la grandeur à mesurer dans la structure. Une revue de littérature de 2021<span class="citation" data-cites="bado2021review">[@bado2021review]</span> en libre accès fait un état de l’art des capteurs distribués à fibre optique dans les applications de génie civil et .</p>
-<p>La diffusion est le phénomène physique qui “disperse” la lumière qui traverse un milieu matériel non opaque. La lumière incidente entre en interaction avec les particules du milieu ; une partie est transmise –les rayons traversent le milieu–, l’autre est <em>diffusée</em> : en frappant sur une inhomogénéité de dimension de l’ordre de la longueur d’onde –que ce soit une particule ou autre–, un photon est absorbé puis renvoyé dans toutes les directions (figure <a href="#fig:principle" data-reference-type="ref" data-reference="fig:principle">1</a>).</p>
+<section id="capteurs-à-fibre-optique" class="level3">
+<h3>Capteurs à fibre optique</h3>
+<p>Les capteurs à fibre optique dits <em>distribués</em> sont une
+manière de relever l’état de contrainte, la déformation, ou la
+température dans les structures, et ce de manière continue : ils donnent
+une image spatialement résolue de la grandeur que l’on veut mesurer.
+Typiquement, cette résolution peut aller de quelques mètres jusqu’à
+descendre en-dessous du mm.<span class="citation"
+data-cites="lunainc"><a href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a></span> Cette technologie est donc
+intéressante pour des applications : un unique capteur offre une image
+de la grandeur à mesurer dans la structure. Une revue de littérature de
+2021<span class="citation" data-cites="bado2021review"><a href="#fn3"
+class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a></span> en libre accès fait un état
+de l’art des capteurs distribués à fibre optique dans les applications
+de génie civil et .</p>
+<p>La diffusion est le phénomène physique qui “disperse” la lumière qui
+traverse un milieu matériel non opaque. La lumière incidente entre en
+interaction avec les particules du milieu ; une partie est transmise
+–les rayons traversent le milieu–, l’autre est <em>diffusée</em> : en
+frappant sur une inhomogénéité de dimension de l’ordre de la longueur
+d’onde –que ce soit une particule ou autre–, un photon est absorbé puis
+renvoyé dans toutes les directions (figure <a href="#fig:principle"
+data-reference-type="ref" data-reference="fig:principle">1</a>).</p>
 <figure>
-<img src="pic/principle.png" id="fig:principle" alt="Figure 1: Principe de la diffusion optique : l’onde incidente est dispersée dans toutes les directions." /><figcaption aria-hidden="true">Figure 1: Principe de la diffusion optique : l’onde incidente est dispersée dans toutes les directions.</figcaption>
+<img src="pic/principle.png" id="fig:principle"
+alt="Figure 1: Principe de la diffusion optique : l’onde incidente est dispersée dans toutes les directions." />
+<figcaption aria-hidden="true">Figure 1: Principe de la diffusion
+optique : l’onde incidente est dispersée dans toutes les
+directions.</figcaption>
 </figure>
-<p>Du fait de ses inhomogénéités microscopiques et de sa structure cristalline, la silice du cœur des fibres optiques diffuse également la lumière qui la traverse, ce qui affecte le signal en sortie de fibre par rapport au signal à l’entrée. En plus d’un signal transmis en sortie de fibre, on a un signal réfléchi à l’entrée du fait de la <em>rétrodiffusion</em> : une partie de la lumière diffusée l’est dans la direction de la source. On peut analyser cette lumière rétrodiffusée à la fois dans le domaine temporel et dans le domaine fréquentiel pour récupérer une image du chemin optique parcouru.</p>
+<p>Du fait de ses inhomogénéités microscopiques et de sa structure
+cristalline, la silice du cœur des fibres optiques diffuse également la
+lumière qui la traverse, ce qui affecte le signal en sortie de fibre par
+rapport au signal à l’entrée. En plus d’un signal transmis en sortie de
+fibre, on a un signal réfléchi à l’entrée du fait de la
+<em>rétrodiffusion</em> : une partie de la lumière diffusée l’est dans
+la direction de la source. On peut analyser cette lumière rétrodiffusée
+à la fois dans le domaine temporel et dans le domaine fréquentiel pour
+récupérer une image du chemin optique parcouru.</p>
 <figure>
-<img src="pic/rayleighramanbrillouin.png" id="fig:rrb" alt="Figure 2: Spectre fréquentiel du signal rétrodiffusé. Au milieu le pic Rayleigh, puis plus loin les pics respectifs Brillouin et Raman.[@ferdinand2014evolution]" /><figcaption aria-hidden="true">Figure 2: Spectre fréquentiel du signal rétrodiffusé. Au milieu le pic Rayleigh, puis plus loin les pics respectifs Brillouin et Raman.<span class="citation" data-cites="ferdinand2014evolution">[@ferdinand2014evolution]</span></figcaption>
+<img src="pic/rayleighramanbrillouin.png" id="fig:rrb"
+alt="Figure 2: Spectre fréquentiel du signal rétrodiffusé. Au milieu le pic Rayleigh, puis plus loin les pics respectifs Brillouin et Raman." />
+<figcaption aria-hidden="true">Figure 2: Spectre fréquentiel du signal
+rétrodiffusé. Au milieu le pic Rayleigh, puis plus loin les pics
+respectifs Brillouin et Raman.<span class="citation"
+data-cites="ferdinand2014evolution"><a href="#fn4" class="footnote-ref"
+id="fnref4" role="doc-noteref"><sup>4</sup></a></span></figcaption>
 </figure>
-<p>Le spectre typique du signal rétrodiffusé est montré en figure <a href="#fig:rrb" data-reference-type="ref" data-reference="fig:rrb">2</a>. On distingue trois pics de diffusion différents : Rayleigh, Brillouin et Raman.</p>
-<p>Une des principales problématiques de la rétrodiffusion est la faible intensité du signal mesuré : plusieurs dizaines de dB en-dessous du niveau de la source (cela dépend du type de diffusion), car la fibre optique reste tout de même très transparente. Cela représente plusieurs difficultés : nécessité de photodiodes sensibles, rapport signal/bruit, etc.</p>
-<p>Nous passons ici en revue quelques méthodes de technologies distribuées Rayleigh et Brillouin, résumé d’un papier de 2014.<span class="citation" data-cites="ferdinand2014evolution">[@ferdinand2014evolution]</span></p>
+<p>Le spectre typique du signal rétrodiffusé est montré en figure <a
+href="#fig:rrb" data-reference-type="ref"
+data-reference="fig:rrb">2</a>. On distingue trois pics de diffusion
+différents : Rayleigh, Brillouin et Raman.</p>
+<p>Une des principales problématiques de la rétrodiffusion est la faible
+intensité du signal mesuré : plusieurs dizaines de dB en-dessous du
+niveau de la source (cela dépend du type de diffusion), car la fibre
+optique reste tout de même très transparente. Cela représente plusieurs
+difficultés : nécessité de photodiodes sensibles, rapport signal/bruit,
+etc.</p>
+<p>Nous passons ici en revue quelques méthodes de technologies
+distribuées Rayleigh et Brillouin, résumé d’un papier de 2014.<span
+class="citation" data-cites="ferdinand2014evolution"><a href="#fn5"
+class="footnote-ref" id="fnref5"
+role="doc-noteref"><sup>5</sup></a></span></p>
 <ul>
-<li><p>L’ par principe Rayleigh. L’idée du réflectomètre temporel est d’envoyer une brève impulsion de lumière à travers une fibre optique, et de tracer l’intensité du pic Rayleigh rétrodiffusé en fonction du temps. On obtient un profil qui nous renseigne sur l’état de la fibre tout au long de son chemin : un écho arrivant tôt correspond à un phénomène en début de fibre, un écho tard traduit un phénomène plus loin dans la fibre. Le fonctionnement est présenté figure <a href="#fig:otdr" data-reference-type="ref" data-reference="fig:otdr">[fig:otdr]</a>.</p>
+<li><p>L’ par principe Rayleigh. L’idée du réflectomètre temporel est
+d’envoyer une brève impulsion de lumière à travers une fibre optique, et
+de tracer l’intensité du pic Rayleigh rétrodiffusé en fonction du temps.
+On obtient un profil qui nous renseigne sur l’état de la fibre tout au
+long de son chemin : un écho arrivant tôt correspond à un phénomène en
+début de fibre, un écho tard traduit un phénomène plus loin dans la
+fibre. Le fonctionnement est présenté figure <a href="#fig:otdr"
+data-reference-type="ref" data-reference="fig:otdr">[fig:otdr]</a>.</p>
 <div class="figure*">
 
 </div></li>
-<li><p>La . Il s’agit ici d’analyser le spectre du signal rétrodiffusé et de regarder le décalage fréquentiel des pics Brillouin (figure <a href="#fig:rrb" data-reference-type="ref" data-reference="fig:rrb">2</a>). Le décalage est dépendant à la fois de l’état de contrainte et de température sur le chemin optique. Le délai temporel du signal renseigne sur la position le long de la fibre optique. Souvent il est possible de découpler température et contrainte pour effectuer une mesure indépendante des deux grandeurs.</p></li>
+<li><p>La . Il s’agit ici d’analyser le spectre du signal rétrodiffusé
+et de regarder le décalage fréquentiel des pics Brillouin (figure <a
+href="#fig:rrb" data-reference-type="ref"
+data-reference="fig:rrb">2</a>). Le décalage est dépendant à la fois de
+l’état de contrainte et de température sur le chemin optique. Le délai
+temporel du signal renseigne sur la position le long de la fibre
+optique. Souvent il est possible de découpler température et contrainte
+pour effectuer une mesure indépendante des deux grandeurs.</p></li>
 </ul>
 </section>
-<section id="mise-en-base-de-données." class="level3">
-<h3>Mise en base de données.</h3>
-<p>Voies d’acquisition -&gt; scénarios -&gt; rapports -&gt; synoptiques -&gt; serveur ScanP avec accès client pour voir tous les assets</p>
-<p>Une base de données <code>BA5_Canakkale_Prod</code> répertorie un ensemble d’éléments, qui sont de nature très diverses. Elle comprend tous les capteurs mais aussi toutes les procédures d’installation, les alertes, les rapports automatiques sur l’état du pont, ou les personnes y travaillant. Chaque type d’élément a sa table dans la base, et chaque item son propre qui permet de l’identifier de manière unique à travers tout le système, et sert de pivot pour effectuer les jointures de tables.</p>
-<p>Les <code>asset</code>s sont une classe qui comprend les capteurs, les les , les , les , qui sont répertoriés dans la table <code>BA5_Canakkale_Prod.dbo.Asset</code>. Chaque <code>asset</code> comprend plusieurs <code>assetComponent</code>s qui correspondent à diverses choses.</p>
+<section id="mise-en-base-de-données" class="level3">
+<h3>Mise en base de données</h3>
+<p>Voies d’acquisition -&gt; scénarios -&gt; rapports -&gt; synoptiques
+-&gt; serveur ScanP avec accès client pour voir tous les assets</p>
+<p>Une base de données <code>BA5_Canakkale_Prod</code> répertorie un
+ensemble d’éléments, qui sont de nature très diverses. Elle comprend
+tous les capteurs mais aussi toutes les procédures d’installation, les
+alertes, les rapports automatiques sur l’état du pont, ou les personnes
+y travaillant. Chaque type d’élément a sa table dans la base, et chaque
+item son propre qui permet de l’identifier de manière unique à travers
+tout le système, et sert de pivot pour effectuer les jointures de
+tables.</p>
+<p>Les <code>asset</code>s sont une classe qui comprend les capteurs,
+les les , les , les , qui sont répertoriés dans la table
+<code>BA5_Canakkale_Prod.dbo.Asset</code>. Chaque <code>asset</code>
+comprend plusieurs <code>assetComponent</code>s qui correspondent à
+diverses choses.</p>
 <ul>
-<li><p>Pour les capteurs eux-mêmes ce sont les voies d’acquisition et calculées. Un <code>asset</code> accéléromètre 3D aura entre autres des <code>assetComponent</code>s qui correspondent, par exemple, aux maxima ou aux moyennes des trois directions.</p></li>
-<li><p>Pour les et cela peut être l’armoire physique qui protège le montage électrique, l’alimentation, le <span data-acronym-label="switch" data-acronym-form="singular+short">switch</span>, le <span data-acronym-label="watchdog" data-acronym-form="singular+short">watchdog</span>.</p></li>
-<li><p>En général, se sont les sous-composants d’un <code>asset</code>.</p></li>
+<li><p>Pour les capteurs eux-mêmes ce sont les voies d’acquisition et
+calculées. Un <code>asset</code> accéléromètre 3D aura entre autres des
+<code>assetComponent</code>s qui correspondent, par exemple, aux maxima
+ou aux moyennes des trois directions.</p></li>
+<li><p>Pour les et cela peut être l’armoire physique qui protège le
+montage électrique, l’alimentation, le <span data-acronym-label="switch"
+data-acronym-form="singular+short">switch</span>, le <span
+data-acronym-label="watchdog"
+data-acronym-form="singular+short">watchdog</span>.</p></li>
+<li><p>En général, se sont les sous-composants d’un
+<code>asset</code>.</p></li>
 </ul>
-<p>Les scénarii (<code>FlowDataGraph</code>) sont une classe qui groupe plusieurs <code>assetComponent</code>s qu’il est pertinent de lier. Par exemple, on définit pour un accéléromètre <code>ACC3_BS.1</code> trois scénarii <code>ACC3_BS.1_X</code>, <code>ACC3_BS.1_Y</code> et <code>ACC3_BS.1_Z</code>, qui contiennent des voies d’acquisition correspondant à la direction, typiquement les maxima.</p>
-<p>Les rapports<span class="sidenote-wrapper"><label for="sn-4" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-4" class="margin-toggle"/><span class="sidenote"></span></span> sont une classe qui, comme son nom l’indique, définit des rapports périodiques. Un rapport peut contenir des scénarii ou des sous-rapports (ces derniers étant eux-même des rapports.) On peut définir la périodicité de génération de chaque rapport. Par exemple, un rapport <code>GeneralReport</code> qui contient tous les autres rapprots sera généré une fois par an. <em>In fine</em>, un rapport est compilé en un document qui contient les données correspondantes sous forme de graphes temporels, d’histogrammes, etc.</p>
-<p>Les synoptiques définissent une interface graphique qui permet à l’utilisateur d’avoir accès au plan de la structure avec les emplacements des différents capteurs, et de rapidement consulter leur état. Ils ont une fonction de tableau de bord.</p>
+<p>Les scénarii (<code>FlowDataGraph</code>) sont une classe qui groupe
+plusieurs <code>assetComponent</code>s qu’il est pertinent de lier. Par
+exemple, on définit pour un accéléromètre <code>ACC3_BS.1</code> trois
+scénarii <code>ACC3_BS.1_X</code>, <code>ACC3_BS.1_Y</code> et
+<code>ACC3_BS.1_Z</code>, qui contiennent des voies d’acquisition
+correspondant à la direction, typiquement les maxima.</p>
+<p>Les rapports sont une classe qui, comme son nom l’indique, définit
+des rapports périodiques. Un rapport peut contenir des scénarii ou des
+sous-rapports (ces derniers étant eux-même des rapports.) On peut
+définir la périodicité de génération de chaque rapport. Par exemple, un
+rapport <code>GeneralReport</code> qui contient tous les autres rapprots
+sera généré une fois par an. <em>In fine</em>, un rapport est compilé en
+un document qui contient les données correspondantes sous forme de
+graphes temporels, d’histogrammes, etc.</p>
+<p>Les synoptiques définissent une interface graphique qui permet à
+l’utilisateur d’avoir accès au plan de la structure avec les
+emplacements des différents capteurs, et de rapidement consulter leur
+état. Ils ont une fonction de tableau de bord.</p>
+<p>L’idée est de découper le pont en sections et pour chaque section,
+d’offrir une vue d’ensemble avec les scénarii les plus pertinents pour
+chaque type de capteur.<span
+class="sidenote-wrapper"><label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/><span
+class="sidenote">Pour une jauge de contrainte <code>D-SG</code> par
+exemple, on choisit la valeur <code>TS-AVE</code> qui correspond à la
+contrainte totale moyennée.<br />
+<br />
+</span></span></p>
 </section>
-<section id="traitement-de-données." class="level3">
-<h3>Traitement de données.</h3>
+<section id="traitement-de-données" class="level3">
+<h3>Traitement de données</h3>
 <p>Base de données prod <code>dbo.Canakkale_prod</code>.</p>
-<p>De l’atelier à l’installation</p>
-<p>Câblage des armoires sous traités. . Expédition. . <span data-acronym-label="commissioning" data-acronym-form="singular+short">commissioning</span>.</p>
 </section>
 <section id="section" class="level3">
-<h3>.</h3>
+<h3></h3>
 <p>Plus propre qu’une simple</p>
 <p>Superrésolution : résolution fréquentielle supérieure au sample</p>
-<p>Article à lire<span class="citation" data-cites="musicvsfft">[@musicvsfft]</span></p>
+<p>Article à lire<span class="citation" data-cites="musicvsfft"><a
+href="#fn6" class="footnote-ref" id="fnref6"
+role="doc-noteref"><sup>6</sup></a></span></p>
 <p>—</p>
 </section>
 </section>
 <section id="sec:iot" class="level2">
 <h2>Développement d’une plateforme de suivi de fréquence propre</h2>
-<p>L’objectif de ce projet de est de mettre en place un accéléromètre autonome, à la fois en énergie et en traitement de l’information. Il s’agit de permettre un suivi de la fréquence propre d’un ouvrage en s’affranchissant des contraintes telles que la mise à disposition d’alimentation 230 V, l’installation d’une armoire dédiée avec un et un <span data-acronym-label="modem" data-acronym-form="singular+short">modem</span>, comme c’est traditionnellement effectué. Initialement, c’est un groupe d’étudiants de l’École Polytechnique qui a travaillé sur le sujet depuis septembre 2021. Par conséquent, il a préalablement été fait un état de l’art sur les .</p>
-<p>Le système sera composé d’un accéléromètre, d’un , d’un microcontrôleur, d’un système d’alimentation comprenant batterie, gestionnaire de puissance et d’un panneau solaire.</p>
-<section id="hardware." class="level3">
-<h3>Hardware.</h3>
-<p>On utilise comme plate-forme un Pycom LoPy 4, basé sur un microcontrôleur <em>Espressif Systems</em> ESP32. Il a pour intérêt de disposer d’une connectivité . Le LoPy 4 est utilisé avec un shield <em>expansion board</em>, qui permet de l’alimenter en USB 5 V, de le connecter à une application de développement sur un ainsi que de fournir un accès aisé aux broches du microcontrôleur.</p>
+<p>L’objectif de ce projet de est de mettre en place un accéléromètre
+autonome, à la fois en énergie et en traitement de l’information. Il
+s’agit de permettre un suivi de la fréquence propre d’un ouvrage en
+s’affranchissant des contraintes telles que la mise à disposition
+d’alimentation 230 V, l’installation d’une armoire dédiée avec un et un
+<span data-acronym-label="modem"
+data-acronym-form="singular+short">modem</span>, comme c’est
+traditionnellement effectué. Initialement, c’est un groupe d’étudiants
+de l’École Polytechnique qui a travaillé sur le sujet depuis septembre
+2021. Par conséquent, il a préalablement été fait un état de l’art sur
+les .</p>
+<p>Le système sera composé d’un accéléromètre, d’un , d’un
+microcontrôleur, d’un système d’alimentation comprenant batterie,
+gestionnaire de puissance et d’un panneau solaire.</p>
+<section id="hardware" class="level3">
+<h3>Hardware</h3>
+<p>On utilise comme plate-forme un Pycom LoPy 4, basé sur un
+microcontrôleur <em>Espressif Systems</em> ESP32. Il a pour intérêt de
+disposer d’une connectivité . Le LoPy 4 est utilisé avec un shield
+<em>expansion board</em>, qui permet de l’alimenter en USB 5 V, de le
+connecter à une application de développement sur un ainsi que de fournir
+un accès aisé aux broches du microcontrôleur.</p>
 <figure>
-<img src="pic/expansion_board_3_lopy4.png" id="fig:lopy" alt="Figure 3: Le Pycom LoPy 4 sur son shield expansion board, plate-forme utilisée pour le projet." /><figcaption aria-hidden="true">Figure 3: Le Pycom LoPy 4 sur son shield <em>expansion board</em>, plate-forme utilisée pour le projet.</figcaption>
+<img src="pic/expansion_board_3_lopy4.png" id="fig:lopy"
+alt="Figure 3: Le Pycom LoPy 4 sur son shield expansion board, plate-forme utilisée pour le projet." />
+<figcaption aria-hidden="true">Figure 3: Le Pycom LoPy 4 sur son shield
+<em>expansion board</em>, plate-forme utilisée pour le
+projet.</figcaption>
 </figure>
 </section>
-<section id="software." class="level3">
-<h3>Software.</h3>
-<p>Le microcontrôleur fonctionne avec un interpréteur µPython,<span class="sidenote-wrapper"><label for="sn-5" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-5" class="margin-toggle"/><span class="sidenote"><a href="https://micropython.org/">https://micropython.org/</a><br />
+<section id="software" class="level3">
+<h3>Software</h3>
+<p>Le microcontrôleur fonctionne avec un interpréteur µPython,<span
+class="sidenote-wrapper"><label for="sn-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-2" class="margin-toggle"/><span
+class="sidenote"><a href="https://micropython.org/"
+class="uri">https://micropython.org/</a><br />
 <br />
-</span></span> une implémentation légère de Python 3 pour des applications basse consommation.</p>
+</span></span> une implémentation légère de Python 3 pour des
+applications basse consommation. Son utilisation implique alors un
+traitement de données effectué par le système, de manière autonome, afin
+de produire l’information utile –à savoir la fréquence propre de
+l’ouvrage– qui sera elle seule envoyée.</p>
 </section>
-<section id="envoi-des-données." class="level3">
-<h3>Envoi des données.</h3>
-<p>interface lora du Pycom</p>
+<section id="envoi-des-données" class="level3">
+<h3>Envoi des données</h3>
+<p>Le Pycom a été spécifiquement choisi parce qu’il communique en . Ce
+protocole a pour avantage d’être énormément économe en énergie, en
+contrepatie d’un débit de données extrêmement faible.</p>
+<p>Les données ne sont envoyées que toutes les <span
+class="math inline">x</span> heures, ainsi, le système est en veille
+profonde la grande majorité du temps, à l’exception des intervalles
+réguliers où il se réveille pour accomplir sa noble tâche : mettre en
+valeur le capital des actionnaires de Vinci.</p>
 <p>protocole</p>
 <p>orange fifo api</p>
-<p>test</p>
+<p><span class="citation"
+data-cites="bado2021review ferdinand2014evolution palmieri2013distributed lecoy2018mesures"><a
+href="#fn7" class="footnote-ref" id="fnref7"
+role="doc-noteref"><sup>7</sup></a></span></p>
 <figure>
-<img src="pic/orange.png" id="fig:couvertureorange" alt="Figure 4: Couverture fournie par Orange. (www.orange-business.com/fr/reseau-iot) Légende : \blacksquare en extérieur, \blacksquare en extérieur et intérieur." /><figcaption aria-hidden="true">Figure 4: Couverture fournie par Orange.<br />
-(<a href="www.orange-business.com/fr/reseau-iot">www.orange-business.com/fr/reseau-iot</a>)<br />
+<img src="pic/orange.png" id="fig:couvertureorange"
+alt="Figure 4: Couverture fournie par Orange. (www.orange-business.com/fr/reseau-iot) Légende : \blacksquare en extérieur, \blacksquare en extérieur et intérieur." />
+<figcaption aria-hidden="true">Figure 4: Couverture fournie par
+Orange.<br />
+(<a href="www.orange-business.com/fr/reseau-iot"
+class="uri">www.orange-business.com/fr/reseau-iot</a>)<br />
 Légende :<br />
-<span style="color: outdoor"><span class="math inline">\blacksquare</span></span> en extérieur,<br />
-<span style="color: indoor"><span class="math inline">\blacksquare</span></span> en extérieur et intérieur.</figcaption>
+<span style="color: outdoor"><span
+class="math inline">\blacksquare</span></span> en extérieur,<br />
+<span style="color: indoor"><span
+class="math inline">\blacksquare</span></span> en extérieur et
+intérieur.</figcaption>
 </figure>
 <div class="figure*">
 <p><img src="pic/canakkale.jpg" alt="image" /></p>
 </div>
 </section>
 </section>
-<section id="sec:conclusion" class="level2">
-<h2>Conclusions</h2>
+<section id="sec:slotstress" class="level2">
+<h2>Alimentation de SlotStress en </h2>
+<p>SlotStress est un système de mesure semi-destructive de la
+précontrainte dans le béton (recherche béton précontraint).</p>
+<section id="précontrainte-du-béton" class="level3">
+<h3>Précontrainte du béton</h3>
+<p>La précontrainte est un type de...</p>
+<p>Partie calibration</p>
+<p>Partie mesure</p>
+<p>Alimentation en USB</p>
+<p>Design de la valise</p>
+</section>
+</section>
+<section id="sec:conclusion" class="level2 unnumbered">
+<h2 class="unnumbered">Conclusions</h2>
+<div id="refs" class="references csl-bib-body" role="doc-bibliography">
+<div id="ref-bado2021review" class="csl-entry" role="doc-biblioentry">
+Bado MF and Casas JR, <span>‘A Review of Recent Distributed Optical
+Fiber Sensors Applications for Civil Engineering Structural Health
+Monitoring’</span> (2021) 21 Sensors 1818 &lt;<a
+href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7962066/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7962066/</a>&gt;
+</div>
+<div id="ref-ferdinand2014evolution" class="csl-entry"
+role="doc-biblioentry">
+Ferdinand P, <span>‘The Evolution of Optical Fiber Sensors Technologies
+During the 35 Last Years and Their Applications in Structure Health
+Monitoring’</span>, <em>EWSHM-7th european workshop on structural health
+monitoring</em> (2014) &lt;<a
+href="https://hal.inria.fr/hal-01021251">https://hal.inria.fr/hal-01021251</a>&gt;
+</div>
+<div id="ref-geoscope" class="csl-entry" role="doc-biblioentry">
+<span>‘Geoscope Datasheet’</span> &lt;<a
+href="https://www.sixense-group.com/wp-content/uploads/2022/01/sixense-monitoring-geoscope-en-1.pdf">https://www.sixense-group.com/wp-content/uploads/2022/01/sixense-monitoring-geoscope-en-1.pdf</a>&gt;
+</div>
+<div id="ref-musicvsfft" class="csl-entry" role="doc-biblioentry">
+John YA, <span>‘A Comparison of , and Methods of Frequency
+Estimation’</span> &lt;<a
+href="https://www.raymaps.com/index.php/a-comparison-of-fft-music-and-esprit-methods-of-frequency-estimation/">https://www.raymaps.com/index.php/a-comparison-of-fft-music-and-esprit-methods-of-frequency-estimation/</a>&gt;
+</div>
+<div id="ref-lecoy2018mesures" class="csl-entry" role="doc-biblioentry">
+Lecoy P, <span>‘Mesures Sur Fibres Optiques’</span> [2018] Techniques de
+l’Ingénieur &lt;<a
+href="https://www.techniques-ingenieur.fr/base-documentaire/mesures-analyses-th1/mesures-des-telecommunications-42317210/mesures-sur-fibres-optiques-r1177/mesure-de-l-attenuation-des-fibres-optiques-r1177v4niv10003.html#3.2.1">https://www.techniques-ingenieur.fr/base-documentaire/mesures-analyses-th1/mesures-des-telecommunications-42317210/mesures-sur-fibres-optiques-r1177/mesure-de-l-attenuation-des-fibres-optiques-r1177v4niv10003.html#3.2.1</a>&gt;
+</div>
+<div id="ref-lunainc" class="csl-entry" role="doc-biblioentry">
+<span>‘Luna ODiSI 6000 Datasheet’</span> &lt;<a
+href="https://lunainc.com/sites/default/files/assets/files/data-sheet/Luna%20ODiSI%206000%20Data%20Sheet.pdf">https://lunainc.com/sites/default/files/assets/files/data-sheet/Luna%20ODiSI%206000%20Data%20Sheet.pdf</a>&gt;
+</div>
+<div id="ref-palmieri2013distributed" class="csl-entry"
+role="doc-biblioentry">
+Palmieri L and Schenato L, <span>‘Distributed Optical Fiber Sensing
+Based on Rayleigh Scattering’</span> (2013) 7 The Open Optics Journal
+&lt;<a
+href="https://www.researchgate.net/publication/259850000_Distributed_Optical_Fiber_Sensing_Based_on_Rayleigh_Scattering">https://www.researchgate.net/publication/259850000_Distributed_Optical_Fiber_Sensing_Based_on_Rayleigh_Scattering</a>&gt;
+</div>
+</div>
+</section>
+<section class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p><span>‘Geoscope Datasheet’</span>
+&lt;<a
+href="https://www.sixense-group.com/wp-content/uploads/2022/01/sixense-monitoring-geoscope-en-1.pdf"
+role="doc-biblioref">https://www.sixense-group.com/wp-content/uploads/2022/01/sixense-monitoring-geoscope-en-1.pdf</a>&gt;.<a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p><span>‘Luna ODiSI 6000
+Datasheet’</span> &lt;<a
+href="https://lunainc.com/sites/default/files/assets/files/data-sheet/Luna%20ODiSI%206000%20Data%20Sheet.pdf"
+role="doc-biblioref">https://lunainc.com/sites/default/files/assets/files/data-sheet/Luna%20ODiSI%206000%20Data%20Sheet.pdf</a>&gt;.<a
+href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>Mattia Francesco Bado and Joan R
+Casas, <span>‘A Review of Recent Distributed Optical Fiber Sensors
+Applications for Civil Engineering Structural Health Monitoring’</span>
+(2021) 21 Sensors 1818 &lt;<a
+href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7962066/"
+role="doc-biblioref">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7962066/</a>&gt;.<a
+href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>Pierre Ferdinand, <span>‘The
+Evolution of Optical Fiber Sensors Technologies During the 35 Last Years
+and Their Applications in Structure Health Monitoring’</span>,
+<em>EWSHM-7th european workshop on structural health monitoring</em>
+(2014) &lt;<a href="https://hal.inria.fr/hal-01021251"
+role="doc-biblioref">https://hal.inria.fr/hal-01021251</a>&gt;.<a
+href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>Ibid.<a href="#fnref5"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6" role="doc-endnote"><p>Yasir Ahmed John, <span>‘A Comparison
+of , and Methods of Frequency Estimation’</span> &lt;<a
+href="https://www.raymaps.com/index.php/a-comparison-of-fft-music-and-esprit-methods-of-frequency-estimation/"
+role="doc-biblioref">https://www.raymaps.com/index.php/a-comparison-of-fft-music-and-esprit-methods-of-frequency-estimation/</a>&gt;.<a
+href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7" role="doc-endnote"><p>Bado and Casas (n 3); Ferdinand (n
+4); Luca Palmieri and Luca Schenato, <span>‘Distributed Optical Fiber
+Sensing Based on Rayleigh Scattering’</span> (2013) 7 The Open Optics
+Journal &lt;<a
+href="https://www.researchgate.net/publication/259850000_Distributed_Optical_Fiber_Sensing_Based_on_Rayleigh_Scattering"
+role="doc-biblioref">https://www.researchgate.net/publication/259850000_Distributed_Optical_Fiber_Sensing_Based_on_Rayleigh_Scattering</a>&gt;;
+Pierre Lecoy, <span>‘Mesures Sur Fibres Optiques’</span> [2018]
+Techniques de l’Ingénieur &lt;<a
+href="https://www.techniques-ingenieur.fr/base-documentaire/mesures-analyses-th1/mesures-des-telecommunications-42317210/mesures-sur-fibres-optiques-r1177/mesure-de-l-attenuation-des-fibres-optiques-r1177v4niv10003.html#3.2.1"
+role="doc-biblioref">https://www.techniques-ingenieur.fr/base-documentaire/mesures-analyses-th1/mesures-des-telecommunications-42317210/mesures-sur-fibres-optiques-r1177/mesure-de-l-attenuation-des-fibres-optiques-r1177v4niv10003.html#3.2.1</a>&gt;.<a
+href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 </article>
 </body>
