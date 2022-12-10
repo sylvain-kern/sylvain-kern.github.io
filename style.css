@@ -60,7 +60,7 @@ body {
   font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
 	line-height: 1.5;
 	margin: 40px auto;
-	max-width: 650px;
+	max-width: 750px;
 	padding: 0 10px;
 }
 
@@ -68,13 +68,11 @@ h1,
 h2,
 h3 {
   font-family: 'Source Sans Pro', 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
-  font-weight: normal;
-  /*
-  font-style: italic;
-  */
-  letter-spacing: 2px;
-  font-variant-caps: small-caps;
-  text-transform: lowercase;
+  /* font-weight: normal; */
+  /* font-style: italic; */
+  /* letter-spacing: 2px; */
+  /* font-variant-caps: small-caps; */
+  /* text-transform: lowercase; */
 	line-height: 1.2;
 }
 
