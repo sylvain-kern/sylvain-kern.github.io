@@ -1,3 +1,9 @@
+
+/* font style definitions  */
+
+
+
+
 /* style */
 
 body {
@@ -50,7 +56,7 @@ code {
   border-radius: 3px;
 }
 
-/* notes */
+/* sidenotes behavior */
 
 .sidenote,.marginnote {
   color: #444;
@@ -109,6 +115,12 @@ label.margin-toggle:not(.sidenote-number) {
     vertical-align: baseline;
     position: relative;
   }
+
+  .sidenote-number:hover {
+    color: #2b5bb3;
+    cursor: pointer;
+  }
+
 }
 
 @media (max-width: 500px) {
@@ -117,4 +129,42 @@ label.margin-toggle:not(.sidenote-number) {
     margin-left: 5px;
     margin-right: 5px;
   }
+}
+
+/* sidenote markers */
+
+/* no more checkboxes */
+input.margin-toggle {
+  display: none;
+}
+
+label.sidenote-number {
+  display: inline;
+}
+.sidenote-number {
+  counter-increment: sidenote-counter;
+}
+
+.sidenote-number::after {
+  top: -0.25em;
+  position: relative;
+  font-size: 80%;
+
+}
+
+.sidenote::before {
+  text-align: left;
+  text-indent: -1em ;
+  float: left;
+}
+
+.sidenote-number::after, .sidenote::before {
+  content: counter(sidenote-counter);
+  position: relative;
+  font-weight: bold;
+  font-family: 'Source Sans Pro', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  -webkit-font-feature-settings: "tnum" 1;
+  font-feature-settings: "tnum" 1;
+  vertical-align: baseline;
+  position: relative;
 }
