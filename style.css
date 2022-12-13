@@ -1,75 +1,26 @@
-/* fonts */
-
-/* @font-face {
-  font-family: "Vollkorn";
-  src: url("./vollkorn/EOT/Vollkorn-Regular.eot");
-  src: url("./vollkorn/WOFF/Vollkorn-Regular.woff") format("woff"), url("./vollkorn/TTF/Vollkorn-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-  font-feature-settings: 'ss11', 'onum';
-}
-
-@font-face {
-  font-family: "Vollkorn";
-  src: url("./vollkorn/EOT/Vollkorn-ExtraBold.eot");
-  src: url("./vollkorn/WOFF/Vollkorn-ExtraBold.woff") format("woff"), url("./vollkorn/TTF/Vollkorn-ExtraBold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-  font-feature-settings: 'ss11', 'onum';
-}
-
-@font-face {
-  font-family: "Vollkorn";
-  src: url("./vollkorn/EOT/Vollkorn-Italic.eot");
-  src: url("./vollkorn/WOFF/Vollkorn-Italic.woff") format("woff"), url("./vollkorn/TTF/Vollkorn-Italic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-  font-feature-settings: 'ss11', 'onum';
-}
-
-@font-face {
-  font-family: "Vollkorn";
-  src: url("./vollkorn/EOT/Vollkorn-ExtraBoldItalic.eot");
-  src: url("./vollkorn/WOFF/Vollkorn-ExtraBoldItalic.woff") format("woff"), url("./vollkorn/TTF/Vollkorn-ExtraBoldItalic.ttf") format("truetype");
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
-  font-feature-settings: 'ss11', 'onum';
-}
-
-@font-face {
-  font-family: "Vollkorn (my headings)";
-  src: url("./vollkorn/EOT/Vollkorn-MediumItalic.eot");
-  src: url("./vollkorn/WOFF/Vollkorn-MediumItalic.woff") format("woff"), url("./vollkorn/TTF/Vollkorn-MediumItalic.ttf") format("truetype");
-  font-weight: medium;
-  font-style: italic;
-  font-display: swap;
-  font-feature-settings: 'ss11', 'onum';
-} */
-
-
-
 /* style */
 
 body {
-	color: #333;
+	color: #222;
 	font-size: 18px;
   font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
 	line-height: 1.5;
-	margin: 40px auto;
-	max-width: 750px;
-	padding: 0 10px;
+}
+
+header, main, footer {
+  width: 87.5%;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: 28%;
+  counter-reset: sidenote-counter;
 }
 
 h1,
 h2,
 h3 {
-  font-family: 'Source Sans Pro', 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
-  /* font-weight: normal; */
-  /* font-style: italic; */
+  font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
+  font-weight: normal;
+  font-style: italic;
   /* letter-spacing: 2px; */
   /* font-variant-caps: small-caps; */
   /* text-transform: lowercase; */
@@ -89,5 +40,81 @@ a:hover {
 }
 
 code {
+  font-size: 90%;
   font-family: "Source Code Pro", "Droid Sans Mono", Consolas, 'Courier New', Courier, monospace;
+  border: 1px solid #DDD;
+  background-color: #EEE;
+  padding-inline: .3ex;
+  padding-top: -2px;
+  padding-bottom: -2px;
+  border-radius: 3px;
+}
+
+/* notes */
+
+.sidenote,.marginnote {
+  color: #444;
+  font-size: 80%;
+  font-family: 'Source Sans Pro', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  float: right;
+  clear: right;
+  margin-right: -45%;
+  width: 40%;
+  margin-top: 0.3rem;
+  margin-bottom: 0;
+  line-height: 1.3;
+  vertical-align: baseline;
+  position: relative;
+}
+
+
+.label.sidenote-number {
+  display: inline;
+}
+label.margin-toggle:not(.sidenote-number) {
+  display: none;
+}
+
+/* intermédiaire : le main text est collé à gauche (burger ?) mais quand même les sidenotes */
+@media (max-width: 1250px) {
+
+  header, main, footer {
+    margin-left: 20pt;
+    width: 65%;
+    margin-right: auto;
+  }
+}
+
+/* bigo */
+@media (max-width: 760px) {
+
+  header, main, footer {
+    margin-left: 10px;
+    margin-right: auto;
+    width: 90%;
+  }
+
+  .sidenote,
+  .marginnote {
+    display: none;
+  }
+  .margin-toggle:checked + .sidenote,
+  .margin-toggle:checked + .marginnote {
+    display: block;
+    float: left;
+    left: 1rem;
+    clear: both;
+    width: 95%;
+    margin: 1rem 2.5%;
+    vertical-align: baseline;
+    position: relative;
+  }
+}
+
+@media (max-width: 500px) {
+
+  header, main, footer {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 }
