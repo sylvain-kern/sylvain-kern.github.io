@@ -1,7 +1,4 @@
-
 /* font style definitions  */
-
-
 
 
 /* style */
@@ -11,13 +8,15 @@ body {
 	font-size: 18px;
   font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
 	line-height: 1.5;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 header, main, footer {
   width: 87.5%;
   max-width: 750px;
-  margin-left: auto;
-  margin-right: 28%;
+  margin-left: 20%;
+  margin-right: auto;
   counter-reset: sidenote-counter;
 }
 
@@ -27,10 +26,16 @@ h3 {
   font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
   font-weight: normal;
   font-style: italic;
-  /* letter-spacing: 2px; */
-  /* font-variant-caps: small-caps; */
-  /* text-transform: lowercase; */
 	line-height: 1.2;
+  hyphens: none;
+  margin-top: 28px;
+  margin-bottom: 16px;
+}
+
+p, .sidenote, .marginnote {
+  margin-top: 16px;
+  margin-bottom: 0px;
+  hyphens: auto;
 }
 
 a {
@@ -46,8 +51,8 @@ a:hover {
 }
 
 code {
-  font-size: 90%;
-  font-family: "Source Code Pro", "Droid Sans Mono", Consolas, 'Courier New', Courier, monospace;
+  font-size: 95%;
+  font-family: Consolas, 'Courier New', Courier, monospace;
   border: 1px solid #DDD;
   background-color: #f5f5f5;
   padding-inline: .3ex;
@@ -84,8 +89,22 @@ label.margin-toggle:not(.sidenote-number) {
   display: none;
 }
 
+
+@media (max-width: 1350px) {
+
+  header, main, footer {
+    width: 50%;
+  }
+
+  .sidenote, .marginnote {
+    margin-right: -50%;
+    width: 40%;
+  }
+
+}
+
 /* intermédiaire : le main text est collé à gauche (burger ?) mais quand même les sidenotes */
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
 
   header, main, footer {
     margin-left: 20pt;
@@ -100,7 +119,7 @@ label.margin-toggle:not(.sidenote-number) {
 }
 
 /* bigo */
-@media (max-width: 760px) {
+@media (max-width: 700px) {
 
   header, main, footer {
     margin-left: 10px;
