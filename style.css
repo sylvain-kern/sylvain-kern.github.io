@@ -297,7 +297,7 @@ label.sidenote-number {
 div.tablenos {
   margin-top: 1em;
   margin-bottom: 1.5em;
-  overflow: scroll;
+  overflow: auto;
 }
 
 table {
