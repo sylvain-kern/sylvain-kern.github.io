@@ -339,3 +339,14 @@ thead {
 tr.header th {
   font-weight: inherit;
 }
+
+/* katex */
+
+.katex-display {
+  overflow: auto hidden;
+  overflow-x: auto;
+}
+
+.katex-html {
+  font-size: 90%;
+}

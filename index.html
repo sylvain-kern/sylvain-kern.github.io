@@ -7,6 +7,24 @@
   <title>test</title>
   <link rel="stylesheet" href="./style.css" />
   <link rel="stylesheet" href="./highlighting.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
 </head>
 <body>
 
@@ -480,7 +498,53 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a hr
 <div class="sourceCode" id="cb6"><pre
 class="sourceCode zsh"><code class="sourceCode zsh"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> zsh <span class="ex">-c</span> <span class="st">&quot;</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="va">)</span><span class="st">&quot;</span></span></code></pre></div>
 </div>
-<h2 id="references">References</h2>
+<h2 id="math">Math</h2>
+<p>Inline : <span class="math inline">y = ax + b</span>. Block:</p>
+<p><span class="math display">
+e^{i\pi}+1 = 0
+</span></p>
+<p>Lorem markdownum quod laboribus fecit, gravis aures supplex Pallas
+proxima iam. Postquam superi desiluit, flentibus posuerunt ferum!
+Fratremque derepta habet aquarum. Lacertis horrentia Mavortius
+sanguineae silentia, num Caesarea mollia candidus. Lorem markdownum quod
+laboribus fecit, gravis aures supplex Pallas proxima iam.</p>
+<p><span class="math display">
+e^x = \sum_{n = 0}^{\infty} \frac{x^n}{n!}.
+</span></p>
+<p><span class="math display">
+\tau_\text w(\omega)=-\frac{1}{c} \sqrt{j \omega \nu} \tanh \left(a
+\sqrt{\frac{j \omega}{\nu}}\right) \frac{e^{j k d_s}-R e^{-j k
+d_s}}{1+R} p^{\prime} e^{j \omega t}
+</span></p>
+<h3 id="chonky-formulae">Chonky formulae</h3>
+<div class="wide">
+<p><span class="math display">
+\frac{J_{p}^{\text {diff }}(X n)}{J_{g}(X n)}=\frac{\frac{\alpha L
+n}{(\alpha L n+1)} e^{-\alpha X n}}{\left(e^{-\alpha X
+n}-1\right)}=\frac{\frac{50000 * 0,0001}{50000 * 0,0001+1} e^{-50000 *
+0,0001}}{\left(e^{-500000000001}-1\right)}=-1,6 * 10^{-22} \ll 1
+</span></p>
+</div>
+<h2 id="content-with-citations">Content with citations</h2>
+<p>This is a citation<span class="citation"
+data-cites="chenInstrumentationGradeShearStress2016"><sup>1</sup></span>.
+Lorem markdownum quod laboribus fecit, gravis aures supplex Pallas
+proxima iam. Postquam superi desiluit, flentibus posuerunt ferum!
+Fratremque derepta habet aquarum. Lacertis horrentia Mavortius
+sanguineae silentia, num Caesarea mollia candidus. Lorem markdownum quod
+laboribus fecit, gravis aures supplex Pallas proxima iam.</p>
+<div id="refs" class="references csl-bib-body" data-line-spacing="2"
+role="doc-bibliography">
+<div id="ref-chenInstrumentationGradeShearStress2016" class="csl-entry"
+role="doc-biblioentry">
+<div class="csl-left-margin">1. </div><div
+class="csl-right-inline">Chen, T.-A., Barnard, C., Mills, D., Horowitz,
+S. &amp; Sheplak, M. <a
+href="https://itea.org/images/pdf/conferences/2016%20TIW/Proceedings/CHEN.pdf">Instrumentation-Grade
+Shear Stress Sensors for Direct Measurement of Mean and Fluctuating Skin
+Friction</a>. 29 (2016).</div>
+</div>
+</div>
 </main>
 
 <script>
