@@ -25,6 +25,13 @@
   </script>
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  
+  <!-- pandoc-eqnos: equation style -->
+  <style>
+    .eqnos { display: inline-block; position: relative; width: 100%; }
+    .eqnos br { display: none; }
+    .eqnos-number { position: absolute; right: 0em; top: 50%; line-height: 0; }
+  </style>
 </head>
 <body>
 
@@ -35,15 +42,29 @@
 </header>
 
 
+<!-- custom toc: -->
+<nav id="TOC" role="doc-toc">
+  
+</nav>
+
+
+
 <main>
-<h1 id="h1-main-title">H1: main title</h1>
-<h2 id="all-headings-this-is-level-two">All headings (this is level
+<h1 data-number="1" id="h1-main-title"><span
+class="header-section-number">1</span> H1: main title</h1>
+<h2 data-number="1.1" id="all-headings-this-is-level-two"><span
+class="header-section-number">1.1</span> All headings (this is level
 two)</h2>
-<h3 id="level-three">Level-three</h3>
-<h4 id="level-four">Level four</h4>
-<h5 id="level-five">Level five</h5>
-<h6 id="level-six">Level six</h6>
-<h2 id="paragraphs">Paragraphs</h2>
+<h3 data-number="1.1.1" id="level-three"><span
+class="header-section-number">1.1.1</span> Level three</h3>
+<h4 data-number="1.1.1.1" id="level-four"><span
+class="header-section-number">1.1.1.1</span> Level four</h4>
+<h5 data-number="1.1.1.1.1" id="level-five"><span
+class="header-section-number">1.1.1.1.1</span> Level five</h5>
+<h6 data-number="1.1.1.1.1.1" id="level-six"><span
+class="header-section-number">1.1.1.1.1.1</span> Level six</h6>
+<h2 data-number="1.2" id="paragraphs"><span
+class="header-section-number">1.2</span> Paragraphs</h2>
 <p>Lorem markdownum Niobe, in quae peracta, matrem ubi vates,
 blanditiis? <strong>Dabitur omnia aper</strong> cacumina sensisse in
 idque passim datum, lupis terrent Aurora Maia.</p>
@@ -60,7 +81,9 @@ mandere: exuere atram magis <em>auctor excita</em>, o. Virque in in <a
 href="http://www.numferens.io/">discedentem haec deceptus</a> nec
 inconcessaeque perosus flammas exarsit.</p>
 </blockquote>
-<h3 id="tectis-praemonuisse-plura">Tectis praemonuisse plura</h3>
+<h3 data-number="1.2.1" id="tectis-praemonuisse-plura"><span
+class="header-section-number">1.2.1</span> Tectis praemonuisse
+plura</h3>
 <p>Dixerat hoc turbida mento nostri dolet fessos. Arcu sedit dumque.
 Amor campus posco. Dilapsa est aquarum coimus cecidit et classis nos,
 regia nec erat lavit undis ratis demugitaeque laetaque.</p>
@@ -85,7 +108,8 @@ esse: septem. Ianigenam in <strong>vestros</strong> mihi tot fecit, qui
 freta conferat, <strong>penates</strong> nomen quo Telamon fenestris,
 duae. Relinquitur voce graviore, me <strong>puto</strong>, discedit in
 sumpta corpore.</p>
-<h2 id="notes">Notes</h2>
+<h2 data-number="1.3" id="notes"><span
+class="header-section-number">1.3</span> Notes</h2>
 <p>For example this is a side note<span
 class="sidenote-wrapper"><label for="sn-0" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-0" class="margin-toggle"/><span
 class="sidenote">This is the text in the side note. It is smaller and
@@ -102,7 +126,8 @@ when the note starts with the text <code>{-}</code>. This is inspired by
 the syntax Pandoc uses for unnumbered headings.<br />
 <br />
 </span></span></p>
-<h2 id="wide-content">Wide content</h2>
+<h2 data-number="1.4" id="wide-content"><span
+class="header-section-number">1.4</span> Wide content</h2>
 <div class="wide">
 <p>Lorem markdownum quod laboribus fecit, gravis aures supplex Pallas
 proxima iam. Postquam superi desiluit, flentibus posuerunt ferum!
@@ -114,7 +139,8 @@ laboribus fecit, gravis aures supplex Pallas proxima iam.</p>
 <div class="sourceCode" id="cb2"><pre
 class="sourceCode zsh"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> zsh <span class="ex">-c</span> <span class="st">&quot;</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="va">)</span><span class="st">&quot;</span></span></code></pre></div>
 </div>
-<h2 id="pictures">Pictures</h2>
+<h2 data-number="1.5" id="pictures"><span
+class="header-section-number">1.5</span> Pictures</h2>
 <p>A reference to the <a href="#fig:label1">image</a>, and another <a
 href="#fig:label2">reference</a>.</p>
 <div id="fig:label1" class="fignos">
@@ -132,10 +158,27 @@ alt="Figure 2: This is a second image" />
 image</figcaption>
 </figure>
 </div>
+<div id="fig:label3" class="fignos">
+<figure>
+<img src="pic/usa-census.png" style="width:50.0%"
+alt="Figure 3: This is a reduced image" />
+<figcaption aria-hidden="true"><span>Figure 3:</span> This is a reduced
+image</figcaption>
+</figure>
+</div>
+<div id="fig:label3" class="fignos">
+<figure>
+<img src="pic/usa-census.png" class="margin"
+alt="Figure 4: This is (meant to be) a margin image" />
+<figcaption aria-hidden="true"><span>Figure 4:</span> This is (meant to
+be) a margin image</figcaption>
+</figure>
+</div>
 <p>See figures <a href="#fig:label1">1</a> and <a
 href="#fig:label2">2</a></p>
 <p>Maxed out references : fig. <a href="#fig:label1">1</a>.</p>
-<h2 id="tables">Tables</h2>
+<h2 data-number="1.6" id="tables"><span
+class="header-section-number">1.6</span> Tables</h2>
 <p>Text before. I can reference the following table with its label : see
 table <a href="#tbl:label3">1</a>.</p>
 <div id="tbl:label3" class="tablenos">
@@ -168,7 +211,8 @@ posuerunt ferum! Fratremque derepta habet aquarum. Lacertis horrentia
 Mavortius sanguineae silentia, num Caesarea mollia candidus. Lorem
 markdownum quod laboribus fecit, gravis aures supplex Pallas proxima
 iam.</p>
-<h3 id="wide-table-test">Wide table test</h3>
+<h3 data-number="1.6.1" id="wide-table-test"><span
+class="header-section-number">1.6.1</span> Wide table test</h3>
 <p>Check the stats table <a href="#tbl:label4">2</a>.</p>
 <div class="wide">
 <div id="tbl:label4" class="tablenos">
@@ -421,7 +465,8 @@ iam.</p>
 </table>
 </div>
 </div>
-<h3 id="merge-cells">Merge cells</h3>
+<h3 data-number="1.6.2" id="merge-cells"><span
+class="header-section-number">1.6.2</span> Merge cells ?</h3>
 <table>
 <thead>
 <tr class="header">
@@ -440,7 +485,38 @@ iam.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="code">Code</h2>
+<p>Nope.</p>
+<h3 data-number="1.6.3" id="margin-tables"><span
+class="header-section-number">1.6.3</span> Margin tables ?</h3>
+<div class="margin">
+<div id="tbl:margin" class="tablenos">
+<table id="tbl:margin">
+<caption><span>Table 3:</span> Margin table test. </caption>
+<thead>
+<tr class="header">
+<th>Header 1</th>
+<th style="text-align: center;">Header 2</th>
+<th style="text-align: right;">Header 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>bold style</strong></td>
+<td style="text-align: center;"><code>code block</code></td>
+<td style="text-align: right;">3.73</td>
+</tr>
+<tr class="even">
+<td>|escape pipe</td>
+<td style="text-align: center;">`backtick</td>
+<td style="text-align: right;">220.34</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Yeah baby</p>
+<h2 data-number="1.7" id="code"><span
+class="header-section-number">1.7</span> Code</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  printf<span class="op">(</span><span class="st">&quot;Hello world!&quot;</span><span class="op">);</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
@@ -498,7 +574,8 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a hr
 <div class="sourceCode" id="cb6"><pre
 class="sourceCode zsh"><code class="sourceCode zsh"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> zsh <span class="ex">-c</span> <span class="st">&quot;</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="va">)</span><span class="st">&quot;</span></span></code></pre></div>
 </div>
-<h2 id="math">Math</h2>
+<h2 data-number="1.8" id="math"><span
+class="header-section-number">1.8</span> Math</h2>
 <p>Inline : <span class="math inline">y = ax + b</span>. Block:</p>
 <p><span class="math display">
 e^{i\pi}+1 = 0
@@ -507,7 +584,12 @@ e^{i\pi}+1 = 0
 proxima iam. Postquam superi desiluit, flentibus posuerunt ferum!
 Fratremque derepta habet aquarum. Lacertis horrentia Mavortius
 sanguineae silentia, num Caesarea mollia candidus. Lorem markdownum quod
-laboribus fecit, gravis aures supplex Pallas proxima iam.</p>
+laboribus fecit, gravis aures supplex Pallas proxima iam. This is inline
+in the flow: <span class="math inline">e^x = \sum_{n = 0}^{\infty}
+\frac{x^n}{n!}</span>. Lorem markdownum quod laboribus fecit, gravis
+aures supplex Pallas proxima iam. Postquam superi desiluit, flentibus
+posuerunt ferum! Fratremque derepta habet aquarum. Lacertis horrentia
+Mavortius sanguineae silentia, num Caesarea mollia candidus.</p>
 <p><span class="math display">
 e^x = \sum_{n = 0}^{\infty} \frac{x^n}{n!}.
 </span></p>
@@ -516,7 +598,8 @@ e^x = \sum_{n = 0}^{\infty} \frac{x^n}{n!}.
 \sqrt{\frac{j \omega}{\nu}}\right) \frac{e^{j k d_s}-R e^{-j k
 d_s}}{1+R} p^{\prime} e^{j \omega t}
 </span></p>
-<h3 id="chonky-formulae">Chonky formulae</h3>
+<h3 data-number="1.8.1" id="chonky-formulae"><span
+class="header-section-number">1.8.1</span> Chonky formulae</h3>
 <div class="wide">
 <p><span class="math display">
 \frac{J_{p}^{\text {diff }}(X n)}{J_{g}(X n)}=\frac{\frac{\alpha L
@@ -525,24 +608,51 @@ n}-1\right)}=\frac{\frac{50000 * 0,0001}{50000 * 0,0001+1} e^{-50000 *
 0,0001}}{\left(e^{-500000000001}-1\right)}=-1,6 * 10^{-22} \ll 1
 </span></p>
 </div>
-<h2 id="content-with-citations">Content with citations</h2>
+<h3 data-number="1.8.2" id="labelled"><span
+class="header-section-number">1.8.2</span> Labelled</h3>
+<p>Here’s a reference to eq. <a href="#eq:description">1</a>:</p>
+<p><span id="eq:description" class="eqnos"><span class="math display">
+M=N \mu_{0} \pi \frac{\pi R_{2}^{2}}{2 R_{1}}
+</span><span class="eqnos-number">(1)</span></span> </p>
+<h3 data-number="1.8.3" id="margin-math"><span
+class="header-section-number">1.8.3</span> Margin math ?</h3>
+<p><span id="eq:margin" class="eqnos"><span class="math display">
+e^{i\pi}+1 = 0
+</span><span class="eqnos-number">(2)</span></span> </p>
+<p>Nope.</p>
+<h2 data-number="1.9" id="content-with-citations"><span
+class="header-section-number">1.9</span> Content with citations</h2>
 <p>This is a citation<span class="citation"
-data-cites="chenInstrumentationGradeShearStress2016"><sup>1</sup></span>.
-Lorem markdownum quod laboribus fecit, gravis aures supplex Pallas
-proxima iam. Postquam superi desiluit, flentibus posuerunt ferum!
-Fratremque derepta habet aquarum. Lacertis horrentia Mavortius
-sanguineae silentia, num Caesarea mollia candidus. Lorem markdownum quod
-laboribus fecit, gravis aures supplex Pallas proxima iam.</p>
+data-cites="chandrasekharanMicroscaleDifferentialCapacitive2011"><sup>1</sup></span>
+with <code>pandoc-citeproc</code>. Lorem markdownum quod laboribus
+fecit, gravis aures supplex Pallas proxima iam. Postquam superi
+desiluit, flentibus posuerunt ferum! Fratremque derepta habet aquarum.
+Lacertis horrentia Mavortius sanguineae silentia, num Caesarea mollia
+candidus. Lorem markdownum quod laboribus fecit, gravis aures supplex
+Pallas proxima iam.</p>
+<p>Another citation,<span class="citation"
+data-cites="10/dfwrxt"><sup><strong>10/dfwrxt?</strong></sup></span>
+this time with the filter</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">--filter</span> pandoc-manubot-cite</span></code></pre></div>
+<h2 data-number="1.10" id="cross-references"><span
+class="header-section-number">1.10</span> Cross-references</h2>
+<h3 data-number="1.10.1"
+id="to-headers-using-pandoc-secnos-filter"><span
+class="header-section-number">1.10.1</span> To headers using
+<code>pandoc-secnos</code> filter</h3>
+<p>See section: <a href="#chonky-formulae">1.8.1</a></p>
+<p>eyop</p>
 <div id="refs" class="references csl-bib-body" data-line-spacing="2"
 role="doc-bibliography">
-<div id="ref-chenInstrumentationGradeShearStress2016" class="csl-entry"
-role="doc-biblioentry">
+<div id="ref-chandrasekharanMicroscaleDifferentialCapacitive2011"
+class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">1. </div><div
-class="csl-right-inline">Chen, T.-A., Barnard, C., Mills, D., Horowitz,
-S. &amp; Sheplak, M. <a
-href="https://itea.org/images/pdf/conferences/2016%20TIW/Proceedings/CHEN.pdf">Instrumentation-Grade
-Shear Stress Sensors for Direct Measurement of Mean and Fluctuating Skin
-Friction</a>. 29 (2016).</div>
+class="csl-right-inline">Chandrasekharan, V., Sells, J., Meloy, J.,
+Arnold, D. P. &amp; Sheplak, M. <a
+href="https://doi.org/10.1109/JMEMS.2011.2140356">A Microscale
+Differential Capacitive Direct Wall-Shear-Stress Sensor</a>. <em>Journal
+of Microelectromechanical Systems</em> <strong>20</strong>, 622–635
+(2011).</div>
 </div>
 </div>
 </main>

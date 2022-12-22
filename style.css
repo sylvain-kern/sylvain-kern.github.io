@@ -9,10 +9,19 @@ body {
   font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
   line-height: 1.6;
   -webkit-hyphens: auto;
+  font-feature-settings: "onum";
   hyphens: auto;
 }
 
 header, main, footer {
+  width: 87.5%;
+  max-width: 750px;
+  margin-left: 20%;
+  margin-right: auto;
+  counter-reset: sidenote-counter;
+}
+
+article {
   width: 87.5%;
   max-width: 750px;
   margin-left: 20%;
@@ -30,6 +39,18 @@ h3 {
   hyphens: none;
   margin-top: 36px;
   margin-bottom: 16px;
+}
+
+h1 .header-section-number,
+h2 .header-section-number,
+h3 .header-section-number {
+  font-style: normal;
+}
+
+.header-section-number::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
 }
 
 p, .sidenote, .marginnote {
@@ -53,7 +74,7 @@ a:hover {
 /* inline code */
 
 code {
-  font-size: 95%;
+  font-size: 90%;
   font-family: Consolas, 'Courier New', Courier, monospace;
   border: 1px solid #DDD;
   background-color: #f5f5f5;
@@ -127,7 +148,7 @@ figure img {
   position: relative;
 }
 
-.sidenote, .marginnote, figcaption {
+.sidenote, .marginnote, figcaption, .margin  {
   float: right;
   clear: right;
   margin-right: -40%;
@@ -156,7 +177,8 @@ label.margin-toggle:not(.sidenote-number) {
 
   .sidenote,
   .marginnote,
-  figcaption {
+  figcaption,
+  .margin {
     margin-right: -55%;
     width: 50%;
   }
@@ -176,7 +198,10 @@ label.margin-toggle:not(.sidenote-number) {
     margin-right: auto;
   }
 
-  .sidenote, .marginnote, figcaption {
+  .sidenote,
+  .marginnote,
+  figcaption,
+  .margin {
     margin-right: -45%;
     width: 40%;
   }
@@ -212,7 +237,8 @@ label.margin-toggle:not(.sidenote-number) {
   .margin-toggle:checked + .sidenote,
   .margin-toggle:checked + .marginnote,
   figcaption,
-  .wide figcaption {
+  .wide figcaption,
+  .margin {
     display: block;
     float: none;
     clear: both;
@@ -349,4 +375,20 @@ tr.header th {
 
 .katex-html {
   font-size: 90%;
+}
+
+/* test collapsing sections */
+
+
+details[open] summary span.icon {
+  transform: rotate(180deg);
+}
+
+summary {
+  display: flex;
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: none;
 }
