@@ -37,25 +37,42 @@ h3 {
   font-style: italic;
 	line-height: 1.2;
   hyphens: none;
-  margin-top: 36px;
-  margin-bottom: 16px;
+  margin-top: 1.8em;
+  margin-bottom: .4em;
+  margin-left: 70px;
 }
 
 h1 .header-section-number,
 h2 .header-section-number,
 h3 .header-section-number {
   font-style: normal;
+  position: relative;
+  display: inline-block;
+  width: 0;
+  left: -70px;
 }
 
-.header-section-number::after {
-  content: "";
-  display: inline-block;
-  width: 16px;
+h1.unnumbered,
+h2.unnumbered,
+h3.unnumbered {
+  margin-left: 0;
+}
+
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+  margin-top: 0px;
+}
+
+p {
+  margin-top: 18px;
+  margin-bottom: 0px;
 }
 
 p, .sidenote, .marginnote {
-  margin-top: 16px;
-  margin-bottom: 0px;
   hyphens: auto;
 }
 
@@ -69,6 +86,11 @@ a:hover {
   text-underline-offset: 2px;
   text-decoration: underline;
 
+}
+
+ul {
+  margin-top: .3em;
+  margin-bottom: .3em;
 }
 
 /* inline code */
@@ -242,7 +264,7 @@ label.margin-toggle:not(.sidenote-number) {
     display: block;
     float: none;
     clear: both;
-    width: 95%;
+    width: 100%;
     margin: 1rem 2.5%;
     margin-left: 0;
     vertical-align: baseline;
@@ -271,6 +293,27 @@ label.margin-toggle:not(.sidenote-number) {
 
 }
 
+@media (max-width: 450px) {
+  h1,
+  h2,
+  h3 {
+    margin-left: 0;
+  }
+
+  h1 .header-section-number,
+  h2 .header-section-number,
+  h3 .header-section-number {
+    display: inline;
+    left: 0;
+  }
+
+  .header-section-number::after {
+    content: "";
+    width: 10px;
+    display: inline-block;
+  }
+}
+
 /* le plus étroit : les blocs de code prennent toute la largeur aussi (genre le responsive de github) */
 @media (max-width: 350px) {
 
@@ -278,9 +321,23 @@ label.margin-toggle:not(.sidenote-number) {
     margin-left: 10px;
     margin-right: 10px;
   }
+
+  .margin-toggle:checked + .sidenote,
+  .margin-toggle:checked + .marginnote,
+  figcaption,
+  .wide figcaption{
+    width: 90%
+  }
+
 }
 
 /* sidenote markers */
+
+@counter-style note-symbols {
+  system: cyclic;
+  symbols: "\204E" "\2051" "\2042" "\2020" "\2020\2020" "\2021" "\2021\2021" "\00A7" "\00A7\00a7" "\007C\007C" "\00B6";
+  suffix: " ";
+}
 
 /* no more checkboxes */
 input.margin-toggle {
@@ -302,13 +359,17 @@ label.sidenote-number {
 }
 
 .sidenote::before {
+  content: counter(sidenote-counter, note-symbols);
   text-align: left;
-  text-indent: -1em ;
+  text-indent: -1.2em ;
   float: left;
 }
 
+.sidenote-number::after{
+  content: counter(sidenote-counter, note-symbols);
+}
+
 .sidenote-number::after, .sidenote::before, .margin-toggle {
-  content: counter(sidenote-counter);
   position: relative;
   font-weight: bold;
   font-family: 'Source Sans Pro', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -342,7 +403,6 @@ td, th {
   padding: 8px;
   padding-top: 3px;
   padding-bottom: 3px;
-  text-align: left;
 }
 
 td {
@@ -358,8 +418,9 @@ tr:hover {
 
 thead {
   font-weight: normal;
-  text-transform: lowercase;
-  font-variant-caps: small-caps;
+  font-variant-caps: all-small-caps;
+  font-feature-settings: "smcp";
+  letter-spacing: .05em;
 }
 
 tr.header th {
