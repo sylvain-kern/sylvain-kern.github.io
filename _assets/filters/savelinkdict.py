@@ -4,18 +4,26 @@ import json
 LinkDict = {}
 
 def generate_link_dict(key, value, format, meta):
-    '''passes through the doc and fills LinkDict = {link of header hn | link of h1 or h2 that contains hn}
+    '''passes through the doc and fills LinkDict = {link of header hn | link of h1/h2 that contains hn}
         needs to take references from image, table, eq links
     '''
 
     global LinkDict
     global currentFileLabel
+    global currentChapLabel
+    global currentSecLabel
 
     if key == 'Header':
         [level, [label, t1, t2], header] = value
-        if level <= 2:
-            currentFileLabel = label
-            LinkDict[label] = label
+        if level == 1:
+            currentChapLabel = label
+            currentSecLabel = ''
+            currentFileLabel = currentChapLabel
+            LinkDict[label] = currentFileLabel
+        elif level == 2:
+            currentSecLabel = label
+            currentFileLabel = currentChapLabel + '/' + currentSecLabel
+            LinkDict[label] = currentFileLabel
         else:
             LinkDict[label] = currentFileLabel
 

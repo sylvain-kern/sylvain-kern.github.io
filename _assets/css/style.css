@@ -1,5 +1,8 @@
 /* font style definitions  */
-
+@font-face {
+  font-family: Inter;
+  src: url(https://indestructibletype.com/fonts/Inter.css);
+}
 
 /* style */
 
@@ -11,12 +14,18 @@ body {
   -webkit-hyphens: auto;
   font-feature-settings: "onum";
   hyphens: auto;
+  text-rendering: optimizeLegibility;
 }
 
-header, main, footer {
-  width: 87.5%;
-  max-width: 750px;
-  margin-left: 20%;
+header {
+  width: 100%;
+  margin-left: 0;
+}
+
+main, footer {
+  width: 65%;
+  max-width: 680px;
+  margin-left: 25%;
   margin-right: auto;
   counter-reset: sidenote-counter;
 }
@@ -32,14 +41,47 @@ article {
 h1,
 h2,
 h3 {
-  font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
-  font-weight: normal;
-  font-style: italic;
+  font-weight: 600;
+  /* font-style: italic; */
 	line-height: 1.2;
   hyphens: none;
   margin-top: 1.8em;
   margin-bottom: .4em;
   margin-left: 70px;
+}
+
+h1 {
+  font-size: 200%;
+  margin-bottom: 2em;
+}
+
+h2 {
+  font-size: 120%;
+  margin-bottom: 1.5em;
+}
+
+h3 {
+  font-size: 100%;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+  padding-top: .5em;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  /* font-style: italic; */
+}
+
+h1 .header-section-number {
+  font-weight: bold;
+  color: #cc0000;
+  /* font-size: 150%; */
 }
 
 h1 .header-section-number,
@@ -56,6 +98,7 @@ h1.unnumbered,
 h2.unnumbered,
 h3.unnumbered {
   margin-left: 0;
+  padding-left: 0;
 }
 
 h1 + p,
@@ -65,6 +108,123 @@ h4 + p,
 h5 + p,
 h6 + p {
   margin-top: 0px;
+}
+
+#sidebar,
+#top-nav {
+  font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  line-height: 1;
+}
+
+#sidebar {
+  position: fixed;
+  height: 98%;
+  width: 20%;
+  max-width: 400px;
+  padding-right: 8px;
+  margin-left: 35px;
+}
+
+#sidebar nav {
+  font-size: 70%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+#sidebar nav ul {
+  list-style: none;
+  padding-left: 0;
+  display: block;
+}
+
+#sidebar nav a {
+  display: block;
+}
+
+#top-nav a {
+  display: inline-block;
+}
+
+#top-nav > a:first-child {
+  margin-left: -6px;
+}
+
+#sidebar nav a,
+#top-nav a {
+  color: #444;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin: 0;
+  border-radius: 4px;
+
+}
+
+#sidebar nav a:hover,
+#top-nav a:hover {
+  background-color: #f2f8fa;
+  color: #2b5bb3;
+}
+
+#sidebar ul {
+  margin: 0px;
+}
+
+#sidebar nav ul li a {
+  /* font-weight: bold; */
+}
+
+#sidebar nav > ul > li > a .toc-section-number{
+  font-weight: bold;
+  color: #cc0000;
+}
+
+
+#sidebar nav ul li ul a {
+  font-weight: normal;
+  letter-spacing: 0em;
+}
+
+#sidebar nav ul li ul li ul a {
+  padding-left: 1.5em;
+}
+
+#sidebar nav ul li
+{
+  margin-bottom: 12px;
+}
+
+#sidebar nav ul li ul li
+{
+  margin-bottom: 0px;
+}
+
+
+#sidebar nav ul li ul {
+  /* font-size: 85%; */
+  /* margin: 0; */
+}
+
+#sidebar nav ul li ul li ul {
+  /* font-size: 85%; */
+  padding-top: 0px;
+}
+
+
+#sidebar nav ul li ul li ul li {
+  padding-bottom: 0;
+}
+
+#top-nav {
+  font-size: 80%;
+  color: #444;
+  font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid #DDD;
+  padding-bottom: 0.3em;
+  padding-top: 2em;
 }
 
 p {
@@ -98,12 +258,12 @@ ul {
 code {
   font-size: 90%;
   font-family: Consolas, 'Courier New', Courier, monospace;
-  border: 1px solid #DDD;
+  /* border: 1px solid #DDD; */
   background-color: #f5f5f5;
   padding-inline: .3ex;
-  padding-top: -2px;
-  padding-bottom: -2px;
-  border-radius: 3px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius: 4px;
 }
 
 /* code blocks */
@@ -128,7 +288,7 @@ pre {
   padding: .3em .8em;
   margin: 0;
   background-color: #f5f5f5;
-  border-radius: 5px;
+  border-radius: 8px;
   border: 1px solid #DDD;
 }
 
@@ -142,9 +302,8 @@ figure {
 figure img {
   width: 100%;
 }
-
 .wide {
-  width: 140%;
+  width: 145%;
 }
 
 
@@ -152,9 +311,21 @@ figure img {
 
 .sidenote, .marginnote, figcaption, table caption {
   color: #444;
-  font-size: 80%;
-  font-family: 'Source Sans Pro', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 70%;
+  font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: left;
+}
+
+.captionprefix{
+  font-weight: 900;
+}
+
+.subfigures p {
+  color: #444;
+  font-size: 80%;
+  font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: left;
+  line-height: 1.3;
 }
 
 /* sidenotes & caption behavior */
@@ -173,13 +344,21 @@ figure img {
 .sidenote, .marginnote, figcaption, .margin  {
   float: right;
   clear: right;
-  margin-right: -40%;
-  width: 35%;
+  margin-right: -45%;
+  width: 40%;
   margin-top: 0.3rem;
   margin-bottom: 0;
   line-height: 1.3;
   vertical-align: baseline;
   position: relative;
+}
+
+.sidenote-wrapper:hover .sidenote {
+  color: black;
+}
+
+.sidenote-wrapper:hover .margin-toggle,.sidenote-wrapper:hover .sidenote::before {
+  color: red;
 }
 
 .label.sidenote-number {
@@ -193,31 +372,14 @@ label.margin-toggle:not(.sidenote-number) {
 
 @media (max-width: 1350px) {
 
-  header, main, footer {
+  main, footer {
     width: 50%;
+    margin-left: 23%;
   }
 
-  .sidenote,
-  .marginnote,
-  figcaption,
-  .margin {
-    margin-right: -55%;
-    width: 50%;
-  }
-
-  .wide {
-    width: 155%;
-  }
-
-}
-
-/* intermédiaire : le main text est collé à gauche (burger ?) mais quand même les sidenotes */
-@media (max-width: 1000px) {
-
-  header, main, footer {
-    margin-left: 30px;
-    width: 65%;
-    margin-right: auto;
+  #sidebar {
+    width: 19%;
+    margin-left: 5px;
   }
 
   .sidenote,
@@ -229,7 +391,40 @@ label.margin-toggle:not(.sidenote-number) {
   }
 
   .wide {
-    width: 145%;
+    width: 147%;
+  }
+
+}
+
+/* intermédiaire : le main text est collé à gauche (burger ?) mais quand même les sidenotes */
+@media (max-width: 1000px) {
+
+  /* #top-nav {
+    width: 100%;
+    z-index: 1;
+    margin-top: 0;
+    background-color: white;
+    position: fixed;
+    display: block;
+  }
+
+  #top-nav + h1,
+  #top-nav + h2 {
+    margin-top: 0;
+    padding-top: 1em;
+  } */
+
+
+  #sidebar {
+    /* en attendant de préparer le burger */
+    display: none;
+  }
+
+  main,
+  footer {
+    margin-left: 30px;
+    width: 65%;
+    margin-right: auto;
   }
 
 }
@@ -242,7 +437,8 @@ label.margin-toggle:not(.sidenote-number) {
     margin-right: 30px;
   }
 
-  header, main, footer {
+  main,
+  footer {
     margin: 0;
     width: 100%;
   }
@@ -372,7 +568,7 @@ label.sidenote-number {
 .sidenote-number::after, .sidenote::before, .margin-toggle {
   position: relative;
   font-weight: bold;
-  font-family: 'Source Sans Pro', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   -webkit-font-feature-settings: "tnum" 1;
   font-feature-settings: "tnum" 1;
   vertical-align: baseline;
@@ -391,13 +587,16 @@ table {
   margin: auto;
   border-collapse: collapse;
   border-spacing: 0;
+  line-height: 1.2;
   /* display: inline-table; */
   border-top: 2px solid grey;
   border-bottom: 2px solid grey;
 }
+
 th {
   border-bottom: 1px solid grey;
 }
+
 td, th {
   font-size: 85%;
   padding: 8px;
@@ -406,6 +605,8 @@ td, th {
 }
 
 td {
+  padding-top: .4em;
+  padding-bottom: .4em;
   font-feature-settings: 'tnum';
   -webkit-font-feature-settings: 'tnum';
   -moz-font-feature-settings: 'tnum';
@@ -418,7 +619,7 @@ tr:hover {
 
 thead {
   font-weight: normal;
-  font-family: 'Source Sans Pro', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-variant-caps: all-small-caps;
   font-feature-settings: "smcp";
   letter-spacing: .05em;
