@@ -1,3 +1,4 @@
+# pandoc-crossref
 chapters: True
 linkReferences: True
 nameInLink: True
@@ -9,13 +10,23 @@ titleDelim: ".</span><br>"
 figPrefix:
   - "figure"
   - "figures"
+subfigureTemplate: $$figureTitle$$ $$i$$$$titleDelim$$ $$t$$
+subfigureChildTemplate: <span class="captionprefix">($$i$$)</span> $$t$$
 tblPrefix:
-  - "table"
-  - "tables"
+  - "tableau"
+  - "tableaux"
 eqnPrefix:
   - "équation"
   - "équations"
-title: test
-author: Sylvain Kern
-lang: "fr"
+eqnPrefixTemplate: $$p$$&nbsp;$$i$$
+secPrefix:
+  - "section"
+  - "sections"
+tableEqns: True
+sectionsDepth: 3
+# numberSections: true
+
+references-section-title: True
+link-citations: True
 bibliography: "_assets/refs/refs.json"
+notes-after-punctuation: True
