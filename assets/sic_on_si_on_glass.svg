@@ -16,7 +16,7 @@
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
      id="namedview590"
-     pagecolor="#ffffff"
+     pagecolor="#2e2e2e"
      bordercolor="#414651"
      borderopacity="1"
      inkscape:showpageshadow="0"
@@ -25,9 +25,9 @@
      inkscape:deskcolor="#bcbfcb"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="6.2169937"
-     inkscape:cx="1160.2071"
-     inkscape:cy="-243.44564"
+     inkscape:zoom="3.5274524"
+     inkscape:cx="172.92934"
+     inkscape:cy="90.858775"
      inkscape:window-width="1920"
      inkscape:window-height="1013"
      inkscape:window-x="-9"
@@ -2004,19 +2004,24 @@
     <text
        xml:space="preserve"
        style="font-size:2.82222px;line-height:1.15;font-family:inter;-inkscape-font-specification:inter;font-variant-numeric:tabular-nums;text-align:start;text-anchor:start;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0.917647"
-       x="68.839348"
-       y="213.13779"
+       x="63.340149"
+       y="213.2878"
        id="text26215-4-4"><tspan
          sodipodi:role="line"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:inter;-inkscape-font-specification:inter;text-align:start;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0.917647"
-         x="68.839348"
-         y="213.13779"
+         x="63.340149"
+         y="213.2878"
          id="tspan27842-1">Suspended SiC</tspan><tspan
          sodipodi:role="line"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:inter;-inkscape-font-specification:inter;text-align:start;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0.917647"
-         x="68.839348"
-         y="216.38335"
-         id="tspan36748">resistance</tspan></text>
+         x="63.340149"
+         y="216.53336"
+         id="tspan36748">resistance:</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:inter;-inkscape-font-specification:inter;text-align:start;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0.917647"
+         x="63.340149"
+         y="219.7789"
+         id="tspan2">100 × 6 × 0.8 µm</tspan></text>
     <path
        style="display:inline;fill:#8f8888;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
        d="m 114.5024,262.00997 -8.66025,-2 h -6.928206 l -18.186538,-12.5 -3.4641,-4 v 0 l -9.52628,0.5 60.621774,-35 38.97115,22.5 z"

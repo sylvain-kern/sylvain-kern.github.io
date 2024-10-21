@@ -34,10 +34,10 @@ section.has-light-background, section.has-light-background h1, section.has-light
   --r-heading3-size: 1.2em;
   --r-heading4-size: 1em;
   --r-code-font: 'JetBrains Mono', 'Consolas', monospace;
-  --r-link-color: #e7ad52;
-  --r-link-color-dark: #d08a1d;
-  --r-link-color-hover: #f3d7ac;
-  --r-selection-background-color: #e7ad52;
+  --r-link-color: #c20f2f;
+  --r-link-color-dark: #70071b;
+  --r-link-color-hover: #ff3c63;
+  --r-selection-background-color: #ff3c63;
   --r-selection-color: #fff;
   --r-overlay-element-bg-color: 240, 240, 240;
   --r-overlay-element-fg-color: 0, 0, 0;
@@ -217,7 +217,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
  * AGENDA
  *********************************************/
 .agenda {
-  font-weight:  bold;
+  font-weight:  500;
   line-height: 150%;
 }
 
