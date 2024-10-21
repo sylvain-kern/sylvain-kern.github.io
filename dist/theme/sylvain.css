@@ -216,16 +216,16 @@ section.has-light-background, section.has-light-background h1, section.has-light
 /*********************************************
  * AGENDA
  *********************************************/
-.agenda {
+.reveal .agenda {
   font-weight:  500;
   line-height: 150%;
 }
 
-.agenda > li {
+.reveal .agenda > li {
   margin-bottom: 1.5em;
 }
 
-.agenda li ul {
+.reveal .agenda li ul {
   list-style-type: none;
   color: lightgray;
   font-weight: normal;
