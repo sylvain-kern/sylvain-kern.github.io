@@ -3,21 +3,410 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="author" content="Sylvain Kern">
 
-		<title>reveal.js</title>
+		<title>Sylvain Kern - SiC Micro Hot Wires for Flow Measurement in Harsh Environments</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
-
+		<link rel="stylesheet" href="dist/theme/sylvain.css">
+		<link rel="stylesheet" href="node_modules/dygraphs/dist/dygraph.min.css">
+		<script src="node_modules/dygraphs/dist/dygraph.min.js"></script>
+		
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
-	<body>
+	<body>	
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section class="hero">
+					<div class="vsep">
+						<div style="flex-basis: 60%;">
+							<div class="logo-main">
+								<img src="./assets/logos/medium_sensors24_logo_color_b85165c3eb.png" alt="" style="height: 60px; margin-bottom: 20px;">
+								<img src="./assets/logos/medium_sensors24_logo_color_b85165c3eb.png" alt="" style="
+									position: absolute;
+									translate: -50% -100%;
+									left: -50%;
+									scale: 300%;
+									z-index: -1;
+									opacity: 50%;
+									filter: blur(300px)"
+									class="img-blur"
+							>
+							</div>
+							<div class="title-block" >
+								<h1>SiC Micro Hot Wires for Flow Measurement in Harsh Environments</h1>
+							
+								<div class="author-block">
+									<ul class="authors">
+										<li><span class="presenting">Sylvain Kern</span>,<sup>1</sup></li>
+										<li>Aurélien Mazzamurro,<sup>1</sup></li>
+										<li>Cécile Ghouila-Houri,<sup>1</sup></li>
+										<li>Thomas Arnoult,<sup>2</sup></li>
+										<li>Romain Viard,<sup>3</sup></li>
+										<li>Djamila Hourlier,<sup>1</sup></li>
+										<li>Laure Tandt,<sup>1</sup></li>
+										<li>Marc Portail,<sup>4</sup></li>
+										<li>Philippe Pernod,<sup>1</sup></li>
+										<li>Abdelkrim Talbi.<sup>1</sup></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div>
+							<img src="./assets/sic_on_si_on_glass_wo_annotation.svg" style="width:100%" class="img-blur">
+							<img src="./assets/sic_on_si_on_glass_wo_annotation.svg" 
+								style="
+								margin-bottom: -100%;
+								width: 100%;
+								position: relative;
+								top: -45%;
+								left: 50%;
+								translate: -50% -100%;
+								z-index: -1;
+								opacity: 80%;
+								filter: blur(100px)"
+								class="img-blur"
+							>
+						</div>
+					</div>
+					<div>
+						<ol class="affil">
+							<li>
+								Univ. Lille, CNRS, Centrale Lille, Université Polytechnique Hauts-de-France, UMR 8520–IEMN,<br>59000 Lille, France.
+							</li>
+							<li>
+								von Karman Institute, Waterloosesteenweg 72,<br>B–1640, Rhode-Saint-Genèse, Belgium.
+							</li>
+							<li>
+								Sensors Automation Lab, Endress+Hauser Process Solutions (DE) GmbH,<br>Freiburg, Germany.
+							</li>
+							<li>
+								Centre de Recherche sur l’Hétéro-Épitaxie et ses Applications, Rue Bernard Grégory,<br>06560 Valbonne, France.
+							</li>
+						</ol>
+					</div>
+					<div class="logos-line">
+						<img src="./assets/logos/centrale_white.png" alt="">
+						<img src="./assets/logos/iemn_white.png" alt="">
+						<img src="./assets/logos/crhea.svg" alt="">
+						<img src="./assets/logos/logo_cnrs.svg" alt="">
+						<img src="./assets/logos/ulille_white.png" alt="">
+						<img src="./assets/logos/anr_white.png" alt="">
+						<img src="./assets/logos/ieee_sensors_council_white.png" alt="">
+					</div>
+				</section>
+				<section data-background-image="./assets/turbulence.gif" data-background-size="130%">
+					<aside class="notes">
+						Typical values:
+						<br>
+						kinematic viscosity of air @ -10°C: 12.43 x10-6 m2/s
+						<br>
+						L = 10 m, u = 250 m/s -> Re = 150e6
+						<br>
+						-> eta =  10/150e6 ~ 6 µm
+						<br><br>
+						Kasagi has been scaled down to match this, the original paper shows QSV dimensions, which are about 10x the Kolmogorov scale
+					</aside>
+					<h2>What is turbulence...<span class="fragment fade-in" data-fragment-index="4">&nbsp;and how to measure it?</span></h2>
+					<p class="fragment fade-out" data-fragment-index="1" style="line-height: 1.8; position: absolute">
+						Big whorls have little whorls,<br>
+						Which feed on their velocity;<br>
+						And little whorls have lesser whorls,<br>
+						And so on to viscosity<br>
+						(in the molecular sense).<br>
+						<span style="text-align: right; display: block;">—Richardson, 1922</span>
+					</p>
+					<div class="vsep fragment fade-in"
+						data-fragment-index="1"
+						style="
+							padding: 30px;
+							background-color: #000000aa;
+							border-radius: 12px;
+							backdrop-filter: blur(20px);
+							"
+					>
+						<div style="flex-basis: 40%;">
+							<div class="" >
+								<h3>
+									Kolmogorov microscales
+								</h3>
+								<img src="./assets/eddy_dissipation.svg" alt="" style="width: 70%; margin: auto; margin-bottom: 16px;">
+							</div>
+							<div class="fragment fade-in" data-fragment-index="1">
+								<img src="./assets/kasagi.svg" alt="" style="width: 90%">
+								<div class="ref">
+									Adapted from Kasagi <em>et al.</em> 2009, <span class="doi">DOI:&nbsp;10/dhhc2h</span>
+								</div>
+							</div>
+						</div>
+						<div class="fragment fade-in" data-fragment-index="4">
+							<h3>	
+								Thermal anemometry
+							</h3>
+							<div style="height:400px">
+								<object style="height:100%" type="image/svg+xml" data="./assets/hot_wire_principle.svg"></object>
+
+								<p style="
+									position: absolute;
+									top: 50px;
+									left: 920px;
+								">
+									\[
+										\frac{\Delta R}{R} = \text{TCR}\cdot\Delta T
+									\]
+								</p>
+
+								<p>
+									<ul>
+										<li class="arrow">
+											Easily miniaturisable to reach these spatio-temporal scales
+										</li>
+									</ul>
+								</p>
+
+							</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>
+						Agenda
+					</h2>
+					<ol class="agenda" style="margin-top: 16px;">
+						<li>
+							<img src="./assets/rolls_inverted.jpg" alt="" style="float: right; clear: both; height: 120px; position: absolute; left: 650px;">
+							Context
+							<ul>
+								<li>
+									The need to measure in harsh environments
+								</li>
+								<li>
+									SiC as an ideal candidate
+								</li>
+							</ul>
+						</li>
+						<li>
+							<img src="./assets/sic_si_aminci53_edited2.jpg" class="radius" alt="" style="float: right; clear: both; height: 130px; position: absolute; left: 350px;">
+							Realization
+							<ul>
+								<li>
+									SiC hot wires
+								</li>
+								<li>
+									Flowchart
+								</li>
+							</ul>
+						</li>
+						<li>
+							Characterization
+							<img src="./assets/sic_on_naca.svg" alt="" style="float: right; clear: both; height: 150px; position: absolute; left: 500px;">
+							<ul>
+								<li>
+									Thermoresistive properties
+								</li>
+								<li>
+									Under airflow
+								</li>
+							</ul>
+						</li>
+						<li>
+							Conclusion & perspectives
+						</li>
+					</ol>
+				</section>
+				<section>
+					<h2>
+						<span class="header-section-number">1.</span>
+						<span>
+						Context: the need to measure<span class="fragment fade-in" data-fragment-index=2><br> ... in harsh environments</span>
+						</span>
+					</h2>
+					<div class="vsep">
+						<div style="flex-basis: 70%;">
+							<p>
+								<strong>$&nbsp;1&nbsp;000&nbsp;000 to anyone who solves Navier-Stokes!</strong>
+							</p>
+							<p>
+								How do we optimize aerodynamic properties of planes cars, etc.?
+							</p>
+							<div class="vsep" style="gap:50px">
+								<div style="flex-basis: 70%;">
+									<img class="radius" src="./assets/wind_tunnel_nasa.jpg">
+									<span class="ref">NASA Ames Research Center</span>
+								</div>
+								<div>
+									<ul style="display: block; margin-left: 0px;">
+										<li style="margin-bottom: 12px;">
+											Wind tunnel testing of scale models
+										</li>
+										<li style="margin-bottom: 12px;">
+											simulation models
+										</li>
+										<li class="arrow">
+											<span class="fragment highlight-red" data-fragment-index=3><em>in situ</em> measurements</span> generate data to feed the simulation models
+										</li>
+									</ul>	
+								</div>
+							</div>
+							<p>
+								to implement <strong>passive</strong>, <strong>active</strong> and <strong>reactive</strong> flow control strategies.
+							</p>
+						</div>
+						<div class="fragment fade-in" data-fragment-index=2>
+							<img src="./assets/rolls_inverted.jpg" alt="">
+							<p class="ref">
+								From Rolls-Royce, The Jet Engine <span class="doi">ISBN:&nbsp;978-1-119-06599-9</span>
+							</p>
+							<p>→ metal probes not suitable because of mechanical, thermal & chemical instability.</p>
+							<p><strong class="fragment highlight-red" data-fragment-index=3>No thermal sensor for hot and reactive flows.</strong></p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>
+						<span class="header-section-number">1.</span>
+						Context:&nbsp;SiC as harsh environment material
+					</h2>
+						<div style="
+							display: grid;
+							grid-template-columns: repeat(3, 1fr);
+							grid-gap: 24px;
+							grid-template-rows: auto auto 1fr 1fr 1fr auto auto;
+							align-items: flex-start;
+							height: 100%;
+						">
+							<div style="flex-grow: 0%;">
+								<p style="font-size: 70%; margin-bottom: 10px;">
+									1999: SiC floating-mass accelerometer
+								</p>
+								<img class="radius" src="./assets/sic_accelerometers.jpg" alt="" style="height:200px"><br>
+								<p class="ref">
+									Mehregany & Zorman, 1999 <span class="doi">DOI:&nbsp;10/dpv557</span>
+								</p>
+							</div>
+							<div style="flex-grow: 0%;">
+								<p style="font-size: 70%; margin-bottom: 10px;">
+									2003: NASA full SiC cantilever flow sensor for harsh environments → planned to go on Venus missions
+								</p>
+								<img class="radius" src="./assets/okojie_patent_schematic.JPG" alt="" style="height:180px"><br>
+								<p class="ref">
+									Okojie, 2003 (patent) <span class="doi">DOI:&nbsp;10/dpv557</span>
+								</p>
+							</div>
+							<div style="flex-grow: 0%;">
+								<p style="font-size: 70%; margin-bottom: 10px;">
+									2022:&nbsp;SiC IC conditioner for strain gauges:&nbsp;+800&nbsp;°C peak, +500&nbsp;°C steady
+								</p>
+								<img class="radius" src="./assets/okojie_sic_jfet.JPG" alt="" style="height:150px"><br>
+								<p class="ref">
+									Okojie, 2022 (presentation, NASA Glenn Research Center) <span class="doi">NASA NTRS:&nbsp;20220017890</span>
+								</p>
+							</div>
+						</div>
+				</section>
+				<section>
+					<h2>
+						<span class="header-section-number">2.</span>
+						Realization:&nbsp;SiC suspended insulated micro hot-wires
+					</h2>
+					<div class="vsep" style="gap: 16px;">
+						<div>
+							<img src="./assets/sic_on_si_on_glass.svg" alt="" style="width: 100%; margin: auto;">
+							<p style="width: 450px">
+								<strong>Why the SiC/Si/Glass sandwich?</strong><br>SiC cannot be grown on SiO<sub>2</sub>, we have to transfer on an insulating substrate
+							</p>
+						</div>
+						<div style="flex-basis: 40%;">
+							<img class="radius" src="./assets/sic_si_aminci53_edited2.jpg" alt="" style="height:300px; margin-bottom: 4px; display: block; margin-left: auto;">
+							<div>
+								<img src="./assets/sacrificial_layer.svg" alt="" style="left: 500px; position: absolute; width: 700px">
+							</div>
+						</div>
+					</div>	
+				</section>
+				<section>
+					<h2>
+						<span class="header-section-number">2.</span>
+						Realization:&nbsp;fabrication flowchart
+					</h2>
+					<img src="./assets/flowchart_si_aminci_2.svg" alt="" style="width: 100%">
+				</section>
+				<section>
+					<h2>
+						<span class="header-section-number">
+							3.
+						</span>
+						Characterization:&nbsp;resistance & TCR&nbsp;<em>vs.</em> <em>T</em>°
+
+					</h2>
+					<div class="vsep">
+						<div style="flex-basis: 50%">
+							<div class="vsep" style="height: fit-content; margin-bottom: 0px;">
+								<div>
+									<img src="./assets/IMG_8676-1-1_edited.jpg" class="radius" style="height: 120px" alt="">
+									<p style="width: 200px; font-size: 24px;">
+										\[
+											\frac{\Delta \rho}{\rho} = \text{TCR}\cdot\Delta T
+										\]
+
+										Typical semiconductor in extrinsic regime:
+										<span style="color: #ff2d5f">
+										\[
+											\frac{\rho}{\rho_0} \sim T^{\alpha - 3/2} \cdot e^{\frac{E_\text d}{k_\text B T}}
+										\]
+										</span>
+									</p>
+								</div>
+								<div style="margin-left: -200px; height: fit-content;">
+									<img src="./assets/sic_on_si_on_glass_setup.svg" style="height:500px; ; margin-bottom: -50px;" alt="">
+								</div>
+							</div>
+							<p>
+								<strong>TCR:&nbsp;</strong>sensor sensitivity in ppm/K
+								<ul>
+									<li class="arrow">SiC:&nbsp;ranging from -700 to +700 ppm/K</li>
+									<li class="arrow">Platinum:&nbsp;~2 800 ppm/K</li>
+								</ul>
+							</p>
+						</div>
+						<div>
+							<div style="flex-basis: 30%">
+								<img src="./assets/resistance_tcr_domains.svg"  alt="">
+							</div>
+							<p></p>
+							<div>
+								<img src="./assets/arrhenius_fitted.svg" style="width: 100%;" alt="">
+							</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>
+						<span class	="header-section-number">
+							3.
+						</span>
+						Characterization:&nbsp;response to airflow</h2>
+						<div class="vsep">
+							<div style="flex-basis: 40%;">
+								<img src="./assets/sic_on_naca.svg" alt="">
+								<p></p>
+								<img src="./assets/tube.JPG" class="radius" alt="" style="width: 350px">
+							</div>
+							<div>
+								<img src="./assets/air_flow_cc_cta.svg" alt="">
+							</div>
+						</div>
+				</section>
+				<section>
+					<h2>
+						<span class="header-section-number">
+							4.
+						</span>
+						Conclusions & perspectives
+					</h2>
+				</section>
 			</div>
 		</div>
 
@@ -25,15 +414,36 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
+				width: 1200,
+				height: 675,
+				margin: 0.1,
+				navigationMode: 'linear',
+				katex: {
+					'trust': true,
+				},
 				hash: true,
-
+				// view: 'scroll',
+				// scrollProgress: true,
+				controlsLayout: 'edges',
+				slideNumber: 'c/t',
+				showSlideNumber: 'all',
+				transition: 'slide',
+				transitionSpeed: 'default',
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [
+					RevealMarkdown,
+					RevealHighlight,
+					RevealNotes,
+					RevealMath.KaTeX,
+					RevealZoom
+				]
 			});
 		</script>
 	</body>
